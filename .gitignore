@@ -1,0 +1,14 @@
+# latex build files
+*.aux
+*.log
+*.toc
+*.bbl
+*.blg
+*.lof
+*.out
+
+# latex pdf output
+*doku.pdf
+
+# temporary files
+*.swp
