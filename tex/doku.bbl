@@ -1,0 +1,53 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+{Jenny}%
+}{%
+{Jenny}%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+jenny}
+\APACinsertmetastar {%
+jenny}%
+\begin{APACrefauthors}%
+{Jenny}, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2005}.
+\newblock
+\APACrefbtitle {{Projektmanagement: das Wissen für eine erfolgreiche
+  Karriere}} {{Projektmanagement: das Wissen für eine erfolgreiche Karriere}}.
+\newblock
+\APACaddressPublisher{}{vdf Hochschulverlag}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wikipedia%
+}{%
+Wikipedia%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+wiki:projektmanagement}
+\APACinsertmetastar {%
+wiki:projektmanagement}%
+\begin{APACrefauthors}%
+Wikipedia.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\APACrefbtitle {{Projektmanagement --- Wikipedia, Die freie Enzyklopädie}.}
+  {{Projektmanagement --- Wikipedia, Die freie Enzyklopädie}.}
+\newblock
+\begin{APACrefURL}
+  \url{http://de.wikipedia.org/w/index.php?title=Projektmanagement&oldid=134052409}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{[Online; Stand 21. September 2014]}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
