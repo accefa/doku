@@ -6,6 +6,7 @@
 *.blg
 *.lof
 *.out
+*.synctex.gz
 
 # latex pdf output
 *doku.pdf
