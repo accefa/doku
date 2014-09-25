@@ -22,6 +22,7 @@ Das Repo besteht aus einem einfachen und flachen Verzeichnisbaum:
     * layout.sty - Layout-Definitionen
     * contents.tex - Inhaltsstruktur
 * fig - Verzeichnis für sämtliche Grafiken
+* pm - Verzeichnis für das Projektmamagement
 * .gitignore
 
 ## Beispieldokumentationen
