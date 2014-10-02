@@ -27,6 +27,6 @@ Das Repo besteht aus einem einfachen und flachen Verzeichnisbaum:
 
 ## Beispieldokumentationen
 
-* https://www.dropbox.com/s/2fraporfhsern9s/WEIM_Projektdokumentation_1.2.pdf?dl=0
-* https://www.dropbox.com/s/9qecfqy53giteds/Team_31.pdf?dl=0
-* https://www.dropbox.com/s/ymowqgotzkq0hoy/Team_20_Produktdokumentation.pdf?dl=0
+* https://www.dropbox.com/s/6diwxd5vqop1aac/WEIM_Projektdokumentation_1.2.pdf?dl=0
+* https://www.dropbox.com/s/vv9h4dt4h65dyrm/Team_31.pdf?dl=0
+* https://www.dropbox.com/s/wnz3md447wxtux4/Team_20_Produktdokumentation.pdf?dl=0
