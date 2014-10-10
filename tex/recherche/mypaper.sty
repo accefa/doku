@@ -23,6 +23,16 @@
 
 \usepackage[table]{xcolor}
 
+% Tabellen
+\usepackage{longtable} % Seitenübergreifende Tabellen
+\usepackage{multirow} % Zeilen zusammenfassen
+
+% Eigene Tabellen
+	% Hellgrau und weiss abwechselnd
+	\newenvironment{zebratabular}{\rowcolors{1}{lgray}{white}\tabular}{\endtabular}
+	\newenvironment{zebralongtable}{\rowcolors{1}{lgray}{white}\longtable}{\endlongtable}
+
+
 %%%%% Sprache
 \usepackage[ngerman]{babel}        % neue deutsche Rechtschreibung
 
