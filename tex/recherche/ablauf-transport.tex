@@ -1,5 +1,5 @@
 \section{Funktionen des Systems}
-Um die benötigten Funktionen unseres System zu eruieren, wird der Ablauf des gesamten Systems bildlich dargestellt. Der Ablauf startet bereits mit einem Startsignal und endet mit dem Stoppsignal.
+Um die benötigten Funktionen unseres System zu eruieren, wird der Ablauf des gesamten Systems bildlich dargestellt. Der Ablauf startet mit dem Startsignal und endet mit dem Stoppsignal.
 
 \begin{figure}[h!]
 \centering
@@ -8,9 +8,9 @@ Um die benötigten Funktionen unseres System zu eruieren, wird der Ablauf des ge
 \label{fig:ablauf-transport}
 \end{figure}
 
-Auf der Abbildung \ref{fig:ablauf-transport} sind die einzelnen Schritte zu erkennen, welche durchlaufen werden müssen. Die Nummerierung stellt die Reihenfolge dar. Die STEUERUNGSEINHEIT ist eine externe Einheit, welche mit der MASCHINE kommuniziert. Die MASCHINE ist dann für den eigentlichen Transport der Bälle verantwortlich. Die Aktion des BALL-GEBER kann eine manuelle Interaktion mit der MASCHINE sein.\\
+Auf der Abbildung \ref{fig:ablauf-transport} sind die einzelnen Schritte zu erkennen, welche durchlaufen werden müssen. Die Nummerierung stellt die Reihenfolge dar. Die STEUERUNGSEINHEIT ist eine externe Einheit, welche mit der MASCHINE kommuniziert. Die MASCHINE ist für den eigentlichen Transport der Bälle verantwortlich. Die Aktion des BALL-GEBER kann eine manuelle Interaktion mit der MASCHINE sein.\\
 \\
-Im ersten Schritt übergibt der BALL-GEBER die Bälle der Maschine, darauf folgt ein Startsignal der STEUERUNGSEINHEIT. Anschliessend muss die MASCHINE den Korb im Spielfeld orten und sich im Schritt 4 entsprechend positionieren. Nach dem Transport der Bälle sendet die MASCHINE ein Stopsignal an die STEUERUNGSEINHEIT.
+Im ersten Schritt übergibt der BALL-GEBER die Bälle der Maschine, darauf folgt ein Startsignal der STEUERUNGSEINHEIT. Anschliessend muss die MASCHINE den Korb im Spielfeld orten und sich im Schritt 4 entsprechend positionieren. Nach dem Transport der Bälle sendet die MASCHINE ein Stoppsignal an die STEUERUNGSEINHEIT.
 
 \subsection{Funktionen}
 Aus diesen Aktivitäten lassen sich die Funktionen ableiten, welche das System leisten muss.\\
@@ -35,5 +35,5 @@ Aus diesen Aktivitäten lassen sich die Funktionen ableiten, welche das System l
         versorgt werden. Daher wird dieser Punkt explizit aufgenommen.
     \item [Computer] Auch dieser Punkt ist sehr wichtig und nicht direkt 
         ableitbar aus dem Ablauf. Die Maschine und auch die 
-        Steuerungseinheit müssen möglicherweise Berechnung vornehmen.
+        Steuerungseinheit müssen möglicherweise zur Laufzeit Berechnungen vornehmen.
 \end{description}
