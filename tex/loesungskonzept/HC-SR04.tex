@@ -41,14 +41,29 @@ Daten berechnete.
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[width=0.5\textwidth]{../../fig/HC-SR04_01.jpg}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{../../fig/HC-SR04_01.jpg}
+		\caption{Testspielfeld}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{../../fig/HC-SR04_02.jpg}
+		\caption{Befestigung Ultraschallmodul}
+	\end{subfigure}
 	\caption{Testaufbau}
 	\label{fig:testaufbau_hcsr04}
 \end{figure}
 
 \subsubsection{Messgenauigkeit}
 Um die Messgenauigkeit zu ermitteln ist der Testeimer dirket in Messrichtung
-des Ultraschallmoduls aufgestellt worden zu verschiedenen Abständen.
+des Ultraschallmoduls aufgestellt worden zu verschiedenen Abständen. Dieser
+Test zeigte auf, dass die Reichweite des Moduls ledglich 170 beträgt mit dem
+gegebenen Aufbau. Dies liegt deutlich unter dem idealen Wert aus dem 
+Datenblatt.
+
+Ein Referenzversuch mit einer Sperrholzplatte zeigte auf, dass das 
+Signalrauschen deutlich verringert wird im Vergleich zum Testeimer. 
+Bei einem Abstand vom 180cm wurde ein mittlerer Impuls von 10.45ms mit einer
+Standardabweichung von 9.7$\mu$s gemessen.
 
 \begin{comment}
 \begin{table}[h!]
@@ -90,3 +105,32 @@ des Ultraschallmoduls aufgestellt worden zu verschiedenen Abständen.
 \end{figure}
 
 \subsubsection{Messempfindlichkeit}
+Die Messung der Messempfindlichkeit beschreibt, wie das Modul Objekte erfassen
+kann, welche nicht direkt anvisiert werden. Hierzu sind Messungen jeweils in 
+5$^\circ$ Schritten durchgeführt worden. Der notierte Wert ist jener, bei
+welchem das Modul den Testeimer gerade noch erkennt, d.h. bei kleineren
+Distanzen wird der Testeimer erkannt.
+
+Interessant ist hier, dass das Ultraschallmodul einen blinden Bereich aufweist
+bei welchem der Testeimer nicht erkannt wird. Dieser Bereich liegt zwischen 
+einem Winkle vom 25$^\circ$-30$^\circ$ und zu einer Distanz von 75-90cm.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../fig/hc-sr04_range.pdf}
+	\caption{Seitliche Messempfindlichkeit}
+\end{figure}
+
+Als einfacher Versuch zur Eingrenzung des Messbereichs ist je ein 
+selbsterstelltes Papierrohr mit einer Länge von 3cm mittels eines 
+Kupferdrahtes auf die Sonden des Ultraschallmoduls fixiert worden. 
+Die Testreihe wurde dann in gleicher Weise wiederholt und zeigte, dass
+sich der Messbereich deutlich redizuert auf 15$^\circ$. Dieser Effekt 
+kann vermutlich extrapoliert werden in der Weise, dass längere Röhren
+zu einem weiteren Einschnüren des Messbereich führen.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{../../fig/HC-SR04_08.jpg}
+	\caption{Modifiziertes Ultraschallmodul}
+\end{figure}
