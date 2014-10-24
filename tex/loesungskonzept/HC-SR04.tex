@@ -24,7 +24,7 @@ platziert worden. Dieser hat die folgenden Eckdaten:
 		Durchmesser unten	& 33cm \\
 		Höhe 			& 48cm \\
 		Farbe 			& Schwarz (matt) \\
-		Material		& Kusntstoff \\
+		Material		& Kunststoff \\
 		Hersteller		& Helit \\
 		Typ			& 61062
 	\end{tabular}
@@ -50,6 +50,7 @@ Daten berechnete.
 Um die Messgenauigkeit zu ermitteln ist der Testeimer dirket in Messrichtung
 des Ultraschallmoduls aufgestellt worden zu verschiedenen Abständen.
 
+\begin{comment}
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{r r r}
@@ -73,6 +74,19 @@ des Ultraschallmoduls aufgestellt worden zu verschiedenen Abständen.
 	\caption{Messgenauigkeit HC-SR04}
 	\label{tab:messgenauigkeit}
 \end{table}
+\end{comment}
 
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{../../fig/hc-sr04_accuracy.pdf}
+		\caption{Impuls Mittelwert}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{../../fig/hc-sr04_jitter.pdf}
+		\caption{Jitter (Standardabweichung)}
+	\end{subfigure}
+	\caption{Messergebnisse der Impulsmessung}
+\end{figure}
 
 \subsubsection{Messempfindlichkeit}
