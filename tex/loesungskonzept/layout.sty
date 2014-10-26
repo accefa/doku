@@ -16,6 +16,8 @@
 \usepackage{lmodern}        % 
 \usepackage{courier}        % Courier-Font wird neutzt für Listings
 
+\usepackage[toc,page]{appendix}
+
 %% In Ausnahmefällen müssen Umlaute ein "Pre-Render" durchlaufen
 %\PrerenderUnicode{ä}
 %\PrerenderUnicode{ü}
@@ -178,3 +180,6 @@
 
 %%%%% Design
 \usepackage{multicol}
+
+\addto\captionsngerman{\let\appendixtocname\appendixname%
+\let\appendixpagename\appendixname}
