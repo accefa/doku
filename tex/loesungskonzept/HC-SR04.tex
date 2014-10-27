@@ -1,4 +1,4 @@
-\subsection{Ultraschallmodul HC-SR04}
+\section{Ultraschallmodul HC-SR04}
 Das Ultraschallmodul HC-SR04 ist ein sehr verbreitetes Modul. Die Popularität
 dieses Moduls ist gegeben durch die folgenden Eigenschaften:
 \begin{itemize}
@@ -9,11 +9,12 @@ dieses Moduls ist gegeben durch die folgenden Eigenschaften:
 	\item Einfache Ansteuerung
 \end{itemize}
 
-\subsubsection{Prüfeinrichtung}
+\subsection{Prüfeinrichtung}
 Für die Prüfung des Ultraschallmoduls ist ein projektnahes Umfeld erstellt 
-worden im Elektroniklabor B332b. Hierzu ist ein freistehender Tisch aufgestellt
-worden in Richtung des Ultraschallmoduls. Auf diesem ist ein passender Eimer
-platziert worden. Dieser hat die folgenden Eckdaten:
+worden im Elektroniklabor B332b. Hierzu ist ein freistehender Tisch 
+aufgestellt worden in Richtung des Ultraschallmoduls (siehe Abbildung 
+\ref{fig:testaufbau_hcsr04}). Auf diesem ist ein passender Eimer platziert
+worden. Dieser hat die folgenden Eckdaten:
 
 \begin{table}[h!]
 	\centering
@@ -36,8 +37,8 @@ Um auch eine gewisse Relevanz und statistische Macht zu erreichen, sind
 sämtliche Prüfungen auch statistisch analysiert worden mit mindestens tausend
 Einzelmessungen. Hierzu sind die Geräte des Elektroniklabor verwendet worden.
 Dabei diente ein Frequenzgenerator als Ansteuerung und ein Digitales 
-Speicheroszilloskop als Messmittel, welches auch gleich die statistischen 
-Daten berechnete.
+Speicheroszilloskop als Messmittel, welches auch gleich die statistische
+Auswertung durchführte.
 
 \begin{figure}[h!]
 	\centering
@@ -53,7 +54,7 @@ Daten berechnete.
 	\label{fig:testaufbau_hcsr04}
 \end{figure}
 
-\subsubsection{Messgenauigkeit}
+\subsection{Messgenauigkeit}
 Um die Messgenauigkeit zu ermitteln ist der Testeimer dirket in Messrichtung
 des Ultraschallmoduls aufgestellt worden zu verschiedenen Abständen. Dieser
 Test zeigte auf, dass die Reichweite des Moduls ledglich 170 beträgt mit dem
@@ -96,6 +97,7 @@ Standardabweichung von 9.7$\mu$s gemessen.
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{../../fig/hc-sr04_accuracy.pdf}
 		\caption{Impuls Mittelwert}
+		\label{fig:impuls_mean}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{../../fig/hc-sr04_jitter.pdf}
@@ -104,7 +106,7 @@ Standardabweichung von 9.7$\mu$s gemessen.
 	\caption{Messergebnisse der Impulsmessung}
 \end{figure}
 
-\subsubsection{Messempfindlichkeit}
+\subsection{Messempfindlichkeit}
 Die Messung der Messempfindlichkeit beschreibt, wie das Modul Objekte erfassen
 kann, welche nicht direkt anvisiert werden. Hierzu sind Messungen jeweils in 
 5$^\circ$ Schritten durchgeführt worden. Der notierte Wert ist jener, bei
@@ -113,24 +115,47 @@ Distanzen wird der Testeimer erkannt.
 
 Interessant ist hier, dass das Ultraschallmodul einen blinden Bereich aufweist
 bei welchem der Testeimer nicht erkannt wird. Dieser Bereich liegt zwischen 
-einem Winkle vom 25$^\circ$-30$^\circ$ und zu einer Distanz von 75-90cm.
+einem Winkel vom 25$^\circ$-30$^\circ$ und zu einer Distanz von 75-90cm.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{../../fig/hc-sr04_range.pdf}
 	\caption{Seitliche Messempfindlichkeit}
+	\label{fig:sideresponse}
 \end{figure}
 
 Als einfacher Versuch zur Eingrenzung des Messbereichs ist je ein 
 selbsterstelltes Papierrohr mit einer Länge von 3cm mittels eines 
 Kupferdrahtes auf die Sonden des Ultraschallmoduls fixiert worden. 
 Die Testreihe wurde dann in gleicher Weise wiederholt und zeigte, dass
-sich der Messbereich deutlich redizuert auf 15$^\circ$. Dieser Effekt 
-kann vermutlich extrapoliert werden in der Weise, dass längere Röhren
-zu einem weiteren Einschnüren des Messbereich führen.
+sich der Messbereich deutlich redizuert auf ca. 15$^\circ$. Dieser Effekt 
+kann extrapoliert werden in der Weise, dass längere Röhren zu einem weiteren 
+Einschnüren des Messbereich führen sollten. Diese Hypothese wurde jedoch
+keinem Test unterzogen.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{../../fig/HC-SR04_08.jpg}
 	\caption{Modifiziertes Ultraschallmodul}
 \end{figure}
+
+\subsection{Fazit}
+Das Ultraschallmodul HC-SR04 bietet auch unter projektnahen Bedingungen 
+eine hohe Linearität (siehe Abbildung \ref{fig:impuls_mean}).
+Dies bedeutet, dass sich das Modul sehr wohl eignet für eine direkte 
+Distanzmessung mit geringer Toleranz. Dies funktioniert jedoch nur in einem
+Bereich von bis zu 170cm, was deutlich unter dem Datenblattwert liegt und knapp
+ist für die geplante Applikation.
+
+Die weiteren Messungen zeigten zudem, dass das Modul insbesondere bei 
+inderekter Messung des Testeimers deutliche Schwierigkeiten aufweist. Die 
+polare Darstellung dieser Messergebnisse zeigt, dass ein eigentlicher 
+Messkegel nicht vorhanden ist (siehe Abbilgung \ref{fig:sideresponse}).
+Dies eliminiert den Einsatz des Moduls für das Abtasten des Spielfelds nach
+dem Zielobjekt, insbesondere dann, wenn zu dem nichtidealen seitlichen
+Messverhalten des Moduls auch Reflexionen und dadurch ausgelöste 
+Interferenzen berücksichtigt werden. Für das Abtasten des Spielfeldes 
+gilt es ein Messverfahren zu verwenden, welches entweder unempfindlich ist
+gegenüber Reflexionen und sonstigen Interferenzen von Aussen oder sehr
+punktuell operieren kann, was Reflexionen von vornherein ausschliesst.
+Ein typischer Vertreter solcher Messmittel sind Laserbasierte Geräte.
