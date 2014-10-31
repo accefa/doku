@@ -1,14 +1,20 @@
 \subsection{Ortung des Korbs}
-Die Fragestellung lautet: "Wo ist der Standort des Korbes?". Um Standorte von Objekte herauszufinden gibt es einige Technologien um welche es nachfolgend geht.
+Die Fragestellung lautet: "Wo ist der Standort des Korbes?". Um Standorte von Objekten herauszufinden gibt es mehrere Technologien. Die Erkennung hat folgende Herausforderungen:
+\begin{itemize}
+	\item Distanz 2 Meter
+	\item Objekt ist schwarz
+	\item Beleuchtung nicht konstant
+\end{itemize}
 
 \subsubsection{Optik}
+Die Umsetzung mittels Optik erfordert auf der Seite der Software-Entwicklung erhöhten Aufwand im Gegensatz zu den anderen Umsetzungsmöglichkeiten.
+\newline\newline
+\textbf{Kamera mit Bildverarbeitung}\newline
+Mittels einer Kamera kann ein Bild fotografiert werden, welches ausgewertet wird um den Ort des Korbes zu bestimmen. Geprüft wurden Auswertungsmethoden auf Basis von Java und Python. In beiden Sprachen gibt es mehrere Bibliotheken, welche es erlauben Bildverarbeitung durchzuführen. Im Bereich Java wurde ImageJ (\href{http://imagej.nih.gov/ij/}{http://imagej.nih.gov/ij/}) und in Phyton wurde OpenCV (\href{http://docs.opencv.org/}{http://docs.opencv.org/}) angeschaut. In beiden Programmiersprachen war es möglich Objekte zu erkennen. (siehe Anhang Bildverarbeitung)\newline
 
-Pixy Section?
+\textbf{Pixy}\newline
 
-Kamera Modul für PI?
 
-Bildverarbeitung
-Mittels einer Kamera kann ein Bild fotografiert werden. Dieses Bild kann ausgewertet werden um den Ort des Korbes bestimmt werden. Geprüft wurden Auswertungsmethode auf Basis von Java und Python. In beiden Sprachen gibt es mehrere Bibliotheken, welche es erlauben Bildverarbeitung durchzuführen. Im Bereich Java wurde ImageJ (\href{http://imagej.nih.gov/ij/}{http://imagej.nih.gov/ij/}) und in Phyton wurde OpenCV  angeschaut. In beiden Programmiersprachen war es möglich Objekte zu erkennen. (siehe Anhang Bildverarbeitung)
 
 \subsubsection{Ultraschall}
 
