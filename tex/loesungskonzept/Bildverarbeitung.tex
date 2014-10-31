@@ -1,11 +1,38 @@
 \section{Bildverarbeitung}
-Die Bildverarbeitung wurde auf Basis von Java und Python geprüft. In beiden Programmiersprachen gibt es viele Bibliotheken, welche Bildoperationen unterstützen. Es beginnt bei einfachen Funktionen wie das Zuschneiden oder Komprimieren von Bildern über Objekterkennung.
+Die Bildverarbeitung wurde auf Basis von Java und Python geprüft. In beiden Programmiersprachen gibt es viele Bibliotheken, welche Bildoperationen unterstützen. Es beginnt bei einfachen Funktionen wie das Zuschneiden oder Komprimieren von Bildern bis hin über integrierte Objekterkennung.\newline
+\newline
+\textbf{Java}\newline
+In Java wurde die Bibliothek ImageJ \href{http://imagejdocu.tudor.lu/}{http://imagejdocu.tudor.lu/} angeschaut. ImageJ ist modular aufgebaut und lässt sich sowohl Nutzen als auch Erweitern. Zweiteres macht die Bibliothek attraktiv, denn es gibt bereits einige Erweiterungen im Netz. Eine solche Erweiterung nennt sich FeatureFinder \href{http://imagejdocu.tudor.lu/doku.php?id=plugin:analysis:feature_finder:start}{http://imagejdocu.tudor.lu/doku.php}. Diese Erweiterung verlangt als Input das zu suchende Objekt und das Bild auf welchem das Objekt gefunden werden muss. \newline
+\newline
 
-Java
-In Java wurde die Bibliothek ImageJ \href{http://imagejdocu.tudor.lu/}{http://imagejdocu.tudor.lu/} angeschaut. ImageJ ist modular aufgebaut und lässt sowohl Nutzen als auch Erweitern. Zweiteres macht die Bibliothek Attraktiv, weil es bereits einige Erweiterungen im Netz gibt. Eine solche Erweiterung nennt sich FeatureFinder. Diese Erweiterung verlangt als Input das zu suchende Objekt als Bild und das Bild auf welchem das Objekt gefunden werden muss.
+In folgendem Beispiel wird gezeigt wie einfach sich ein Bild zuschneiden lässt.
+\begin{lstlisting}
+public void crop(ImagePlus imp, int targetWidth, int targetHeight) {
+	ImageProcessor ip = imp.getProcessor();
+	int cropX = ip.getWidth() / 2;
+	int cropY = ip.getHeight() / 2;
+	ip.setRoi(cropX, cropY, targetWidth, targetHeight);
+	ip = ip.crop();
+	BufferedImage croppedImage = ip.getBufferedImage();
+	ImageIO.write(croppedImage, "jpg", new File("cropped.jpg"));
+}
+\end{lstlisting}
 
-Eine zweite Variante ist auf einer definierten Linie auf dem Bild die Pixel auszulesen. Da der Korb dunkler ist als der Hintergrund kann man nach dem Muster des Korbes suchen.
+Es ist auch möglich das Bild, auf welchem der Korb zu suchen ist, mit eigenen Low-Level Bildverarbeitung Operationen zu verarbeiten. Beispielsweise kann von links nach rechts die Pixel untersucht wurden. Dort wo der Korb steht weisen die einzelnen Pixel eine anderen Charakteristika auf.
 
-Python
+Auch das Auslesen eines Pixels auf dem Bild ist simpel.
+\begin{lstlisting}
+private void readSomePixel() {
+	ImagePlus im = new ImagePlus("C:/tmp/ALLUSB/Bilder/Scannen0001.jpg");
+	ImageProcessor imp = im.getProcessor();
+
+	int[] rgb = new int[3];
+	imp.getPixel(5, 5, rgb);
+	System.out.println(Arrays.toString(rgb));
+}
+\end{lstlisting}
+
+
+\textbf{Python}
 
 
