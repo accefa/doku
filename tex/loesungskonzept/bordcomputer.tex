@@ -112,17 +112,17 @@ Ergebnisse zustande kamen.
 	\item[Dokumentation] Da der Raspberry Pi explizit zu 
 		Bildungs- und Experimentierzwechen entwickelt wurde, 
 		bietet der Hersteller auch relevante Daten an für dessen
-		Einsatz. Die Entwicklung im Bereich der
+		Einsatz \cite{RPiSchematics}. Die Entwicklung im Bereich der
 		erwerblichen Literatur oder der frei verfügbaren
 		Tutorials korreliert mit den Verkaufszahlen und es 
 		existieren grosse Benutzergemeindschaften.
 	\item[Preis] Die Ziele der Raspberry Pi Foundation bei der
 		Entwicklung des Raspberry Pi waren Kompaktheit und ein 
-		niedriger Preis. Diese Ziele zeigen sich auch im
-		entstandenen Produkt, welches bei offiziellen Distributor
-		für 32.57 SFr. erworben werden kann. Dies ist ein 
-		auffallend geringer Preis im Bereich der 
-		Einplatinencomputer mit ähnlichen Eigenschaften.
+		niedriger Preis \cite{RPiFoundation}. Diese Ziele zeigen sich
+		auch im entstandenen Produkt, welches bei offiziellen 
+		Distributor für 32.57 SFr. erworben werden kann. Dies ist ein 
+		auffallend geringer Preis im Bereich der Einplatinencomputer
+		mit ähnlichen Eigenschaften.
 \end{description}
 
 Für die Evaluation ist ein aktuelles Modell eines Raspberry Pi mit
@@ -136,7 +136,7 @@ Einsatzfähigkeit nicht weiter untersucht werden muss.
 Wie jede andere Komponente eines Systems, kann auch die des Bordcomputers
 falsch eingeschätzt werden. Um ein späteres Nachsehen zu vermeiden wird
 zu dieser Phase auch gleich evaluiert, wie man kritische Funktionen
-aus- bzw. umlagern kann, falls der Raspberry Pi in dieses versagen sollte.
+aus- bzw. umlagern kann, falls der Raspberry Pi in diesen versagen sollte.
 
 \subsubsection{LowLevel Fallback}
 Sollte der Fall eintreten, dass gewisse LowLevel Funktionalitäten nicht
@@ -145,7 +145,7 @@ werden können, wird für diese Funktionen ein dediziertes LowLevel
 Mikrocontroller System hinzugezogen. Solche LowLevel Funktionen können
 Hardware-Interrupts oder direkte Peripheriekomponenten des Mirkocontrollers
 betreffen auf dem auch das Betriebssystem läuft. Diese LowLevel Funktionen
-verlangen im Extremfall ein Anpassen des Kernels bzw. das erstellen eigener
+verlangen im Extremfall ein Anpassen des Kernels bzw. das Erstellen eigener
 Kernelmodule (Treiberprogramme). Der Overhead, welcher sich beim 
 Kerneldevelopment ergeben kann, ist im Verhältnis zum Ergebnis suboptimal. 
 Um auf solche Probleme ein Fallback zu haben wird ein einfaches 
@@ -160,16 +160,16 @@ dadurch wesentlich einfacher und dedizierter programmiert werden kann.
 
 Aktuell wird das Freedomboard FRDM-KL25Z evaluiert. Diese wird im Rahmen
 des offiziellen Curriculum der Hochschule Luzern eingesetzt sowie auch
-in einem aussercurricularem Kurs für Programmiereinsteiger. Die Vorteile,
-welche sich dadurch ergeben sind erheblich, denn es besteht eine grosse
-Benutzergruppe inklusive Dozenten auf dem Campus Horw welche Einführungen,
-Kursunterlagen und sonstige Informationen und Hilfen anbieten können. Mit
-Hilfe dieser Unterlagen war es bereits möglich die Buildutils der 
-Hochschule auf Linux zu portieren. Mit einer Firmware des Herstellers und 
-des OpenSDA ist es nun möglich ohne komplizierte Tools eigene Programme zu 
-entwickeln und zu flashen ohne weitere Geräte. Im Falle eines plötzlichen 
-Bedarfs für ein Fallback, sind dies entscheidende Kriterien. Zudem ergibt
-sich wiederum die vorteilhafte Situation, dass auch die direkte 
+in einem neuen aussercurricularem Kurs für Programmiereinsteiger. Die 
+Vorteile, welche sich dadurch ergeben sind erheblich, denn es besteht eine 
+grosse Benutzergruppe inklusive Dozenten auf dem Campus Horw welche 
+Einführungen, Kursunterlagen und sonstige Informationen und Hilfen anbieten
+können. Mit Hilfe dieser Unterlagen war es bereits möglich die Buildutils der 
+Hochschule auf Linux zu portieren \cite{ninuxC}. Mit einer Firmware des 
+Herstellers und des OpenSDA ist es nun möglich ohne komplizierte Tools eigene
+Programme zu entwickeln und zu flashen ohne weitere Geräte. Im Falle eines
+plötzlichen Bedarfs für ein Fallback, sind dies entscheidende Kriterien.
+Zudem ergibt sich wiederum die vorteilhafte Situation, dass auch die direkte 
 Programmierung des Mikrocontrollers von den Informatik-Studenten erfolgen
 kann und die geringe Manpower der Elektrotechnik entlastet werden kann
 falls dies nötig ist.
