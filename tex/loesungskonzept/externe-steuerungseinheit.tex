@@ -1,7 +1,10 @@
 \subsection{Externe Steuerungseinheit}
-Die externe Steuerungseinheit ist mindestens dafür verantwortlich, dass diese ein Startsignal an die Maschine sendet und am Schluss ein Stoppsignal bekommt. Weitere Gedanken gehen dahin, dass die externe Steuerungseinheit aufwändige Berechnungen vornehmen kann. Zudem ist es möglich, dass diese Einheit ein Statusprotokoll anzeigt, was die Maschine gerade macht.
+Die externe Steuerungseinheit ist mindestens dafür verantwortlich, dass diese ein Startsignal an die Maschine sendet und am Ende des Vorgangs ein Stoppsignal erhält. Weitere Gedanken gehen dahin, dass die externe Steuerungseinheit aufwändige Berechnungen zur Laufzeit vornehmen kann. Eine zusätzliche Idee ist es, dass diese Einheit Statusmeldungen von der Maschine erhält. Eine Statusmeldung könnte sein "Ortung des Korbes abgeschlossen" oder "Ball 4 abgefeuert".
+
+Ausserdem muss die externe Steuerungseinheit das gewählte Kommunikationsprotokoll unterstützen.
 
 \subsubsection{Notebook}
-Der Vorteil eins Notebook ist, dass diese bereits sehr viel Rechenpower besitzt. 
+Ein Notebook als externe Steuerungseinheit ist zu favorisieren. Start-, Stoppsignal und Statusmeldungen zu empfangen sind kein Problem. Zusätzlich bietet heute ein handelsüblicher Notebook bereits sehr viel Rechenpower. Falls die Umsetzung aufwendige Berechnungen erfordert, sollte die Rechenleistung eines modernen Notebooks ausreichen. 
 
 \subsubsection{Mobile}
+Mobile steht für ein Smartphone oder auch für ein Tablet. Auch hier sind Start-, Stoppsignal und Statusmeldungen problemlos möglich. Doch diese Variante gilt als "nice-to-have", denn ein solches Geräte verfügt heute noch nicht über die eventuell nötige Rechenleistung eines Notebooks für aufwendige Berechnungen.
