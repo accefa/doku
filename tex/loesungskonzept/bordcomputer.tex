@@ -70,6 +70,12 @@ Der Raspberry Pi ist inzwischen sehr weit verbreitet. Dies spiegelt sich
 auch wider im grossen Angebot an Literatur, Projekten und Tutorials um
 und über den Raspberry Pi.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{../../fig/raspberry-pi-b-plus.jpg}
+	\caption{Der Rasprberry Pi in der neusten Generation B+}
+\end{figure}
+
 Der Raspberry Pi ist als erste Wahl für die Rolle des Bordcomputers 
 gewählt worden aufgrund der gegebenen Kriterien, zu denen folgende 
 Ergebnisse zustande kamen.
@@ -125,5 +131,46 @@ was bisher positive Ergebnisse geliefert hat. Die bisherigen Ergebnisse
 führten zudem zum Fazit, dass der Raspberry Pi ein für die Projektaufgabe
 vielseitig einsetzbaren Bordcomputer darstellt, der hinsichtlich seiner
 Einsatzfähigkeit nicht weiter untersucht werden muss.
+
+Wie jede andere Komponente eines Systems, kann auch die des Bordcomputers
+falsch eingeschätzt werden. Um ein späteres Nachsehen zu vermeiden wird
+zu dieser Phase auch gleich evaluiert, wie man kritische Funktionen
+aus- bzw. umlagern kann, falls der Raspberry Pi in dieses versagen sollte.
+
+\subsubsection{LowLevel Fallback}
+Sollte der Fall eintreten, dass gewisse LowLevel Funktionalitäten nicht
+oder nur unter ungünstigen Bedingungen mit dem Raspberry Pi realisiert 
+werden können, wird für diese Funktionen ein dediziertes LowLevel 
+Mikrocontroller System hinzugezogen. Solche LowLevel Funktionen können
+Hardware-Interrupts oder direkte Peripheriekomponenten des Mirkocontrollers
+betreffen auf dem auch das Betriebssystem läuft. Diese LowLevel Funktionen
+verlangen im Extremfall ein Anpassen des Kernels bzw. das erstellen eigener
+Kernelmodule (Treiberprogramme). Der Overhead, welcher sich beim 
+Kerneldevelopment ergeben kann, ist im Verhältnis zum Ergebnis suboptimal. 
+Um auf solche Probleme ein Fallback zu haben wird ein einfaches 
+Mikrocontrollersystem evaluiert welches ohne Betriebsystem auskommt und
+dadurch wesentlich einfacher und dedizierter programmiert werden kann.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{../../fig/frdm-kl25z.jpg}
+	\caption{Das Freedomboard FRDM-KL25Z von Freescale}
+\end{figure}
+
+Aktuell wird das Freedomboard FRDM-KL25Z evaluiert. Diese wird im Rahmen
+des offiziellen Curriculum der Hochschule Luzern eingesetzt sowie auch
+in einem aussercurricularem Kurs für Programmiereinsteiger. Die Vorteile,
+welche sich dadurch ergeben sind erheblich, denn es besteht eine grosse
+Benutzergruppe inklusive Dozenten auf dem Campus Horw welche Einführungen,
+Kursunterlagen und sonstige Informationen und Hilfen anbieten können. Mit
+Hilfe dieser Unterlagen war es bereits möglich die Buildutils der 
+Hochschule auf Linux zu portieren. Mit einer Firmware des Herstellers und 
+des OpenSDA ist es nun möglich ohne komplizierte Tools eigene Programme zu 
+entwickeln und zu flashen ohne weitere Geräte. Im Falle eines plötzlichen 
+Bedarfs für ein Fallback, sind dies entscheidende Kriterien. Zudem ergibt
+sich wiederum die vorteilhafte Situation, dass auch die direkte 
+Programmierung des Mikrocontrollers von den Informatik-Studenten erfolgen
+kann und die geringe Manpower der Elektrotechnik entlastet werden kann
+falls dies nötig ist.
 
 \subsubsection{Alternativen}
