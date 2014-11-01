@@ -1,0 +1,50 @@
+\section{Kommunikation}
+\label{anhang-kommunikation}
+Der ganze Versuch basiert auf dem Tutorial von dreamyssoft.com \href{http://www.dreamsyssoft.com/blog/blog.php?/archives/6-Create-a-simple-REST-web-service-with-Python.html}{http://www.dreamsyssoft.com/blog/blog.php?/archives/6-Create-a-simple-REST-web-service-with-Python.html}
+
+\subsection{Ziel}
+Das Ziel des Versuches ist es über den TCP/IP Stack von einem externen Gerät Funktionen auf dem Raspberry PI aufzurufen.
+
+\subsection{Versuch}
+In einem ersten Schritt wurde auf dem Raspberry PI ein Python Webservice implementiert und gestartet. Die Wahl Python ist dadurch begründet, da mittels Python relativ einfach serielle Ports angesteuert werden können.\newline
+\newline
+Dazu haben wir auf dem Raspberry PI die Python-Library web.py installiert. Diese Library ermöglicht es einen Webservice in Python zu schreiben. Nachfolgend haben wir den Webservice auf dem PI angelegt und anschliessend gestartet.
+
+\begin{lstlisting}
+#!/usr/bin/env python
+import web
+import xml.etree.ElementTree as ET
+
+tree = ET.parse('user_data.xml')
+root = tree.getroot()
+
+urls = (
+	'/users', 'list_users',
+	'/users/(.*)', 'get_user'
+)
+
+app = web.application(urls, globals())
+
+class list_users:        
+	def GET(self):
+		output = 'users:[';
+			for child in root:
+				print 'child', child.tag, child.attrib
+				output += str(child.attrib) + ','
+				output += ']';
+				return output
+
+	class get_user:
+	def GET(self, user):
+		for child in root:
+			if child.attrib['id'] == user:
+			return str(child.attrib)
+
+	if _name_ == "_main_":
+		app.run()
+\end{lstlisting}
+
+Nun läuft der Webservice unter dem Port 8080 und kann von einem x-beliebigen Gerät im gleichen Netzwerk aufgerufen werden.
+\subsection{Fazit}
+Es ist problemlos möglich über TCP/IP auf das Raspberry PI zuzugreifen. Sogar Webservices lassen sich in Python implementieren, welche von irgendeinem Client aufgerufen werden können.
+
