@@ -1,9 +1,12 @@
 \subsection{Kommunikation}
+Die externe Steuerungseinheit muss mit der Maschine kommunizieren. Als Pflichtanforderung muss sowohl Start- wie auch Stoppsignal übertragen werden. Jedoch ist es möglich, dass die Maschine zusätzlich noch mit der Steuerungseinheit in Kontakt treten muss, falls diese die Aufgaben nicht selbst bewältigen kann. In den Abschnitten \ref{externe-steuerungseinheit} und \ref{bordcomputer} sind die beiden Kommunikationspartner genauer beschrieben. Da beide Teilnehmer das gleiche Kommunikationsprotokoll unterstützen müssen ist die endgültige Entscheidung auch abhängig von der Teilnehmerwahl. 
 
 \subsubsection{ZigBee}
+ZigBee kommt bei Sensoren-Netzwerken zum Einsatz und ist optimiert für Low-Power Sensoren. Dies bedeutet auch, dass der Datendurchsatz möglichst gering sein soll. Diese Umsetzungsvariante scheidet aus. Es ist nicht für unseren Anwendungsfall konzipiert und zudem müssten beide Kommunikationspartner über spezielle Hardware Module verfügen.
 
 \subsubsection{Bluetooth}
+Bluetooth ist ein weitverbreiteter Standard. Beinahe alle Smartphones und Tablets haben Bluetooth integriert, jedoch fehlt dieses Modul bei einigen Notebooks. Die Ansteuerung der Bluetooth-Module aus Hochsprachen wie Java oder Python stellt sich nicht als Problem heraus.
 
-\subsubsection{WLAN (eigenes Netz)}
-
-\subsubsection{WLAN (Ad-hoc)}
+\subsubsection{WLAN (eigenes Netz / Ad-hoc)}
+Mit WLAN hat man den gesamten TCP/IP Stack zur Verfügung. Diese Variante wird bevorzugt, denn man kann schnell eine Komponenten-Architektur auf Seite der Software aufziehen. Nahezu alle Mobile-Devices und Notebooks verfügen über einen WLAN-Adapter.\newline
+WLAN kann in verschieden Modi betrieben werden. Es wäre möglich mit einem Access Point ein eigenes Netzwerk zu erstellen in welchem sich die Teilnehmer anmelden können. Der andere Weg nennt sich Ad-hoc. Beide Teilnehmer können ohne ein zur Verfügung gestelltes Netz kommunizieren, denn diese erfolgt direkt untereinander. Jedoch ist der Konfigurationsaufwand höher siehe dazu \href{http://www.informationsarchiv.net/articles/1203/}{http://www.informationsarchiv.net/articles/1203/}. Zudem kann nicht jede WLAN Hardware mehrere Clients in einem solchen Ad-hoc Netzwerk aufnehmen. Daher ist die Variante 'eigenes Netz' zu favorisieren.
