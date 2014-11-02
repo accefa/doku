@@ -7,14 +7,11 @@ Die Fragestellung lautet: "Wo ist der Standort des Korbes?". Um Standorte von Ob
 \end{itemize}
 
 \subsubsection{Optik}
-Die Umsetzung mittels Optik erfordert auf der Seite der Software-Entwicklung erhöhten Aufwand im Gegensatz zu den anderen Umsetzungsmöglichkeiten.
-\newline\newline
-\textbf{Kamera mit Bildverarbeitung}\newline
-Mittels einer Kamera kann ein Bild fotografiert werden, welches ausgewertet wird um den Ort des Korbes zu bestimmen. Geprüft wurden Auswertungsmethoden auf Basis von Java und Python. In beiden Sprachen gibt es mehrere Bibliotheken, welche es erlauben Bildverarbeitung durchzuführen. Im Bereich Java wurde ImageJ (\href{http://imagej.nih.gov/ij/}{http://imagej.nih.gov/ij/}) und in Phyton wurde OpenCV (\href{http://docs.opencv.org/}{http://docs.opencv.org/}) angeschaut. In beiden Programmiersprachen war es möglich Objekte zu erkennen. (siehe Anhang \ref{anhang-bildverarbeitung})\newline
+Die Umsetzung mittels Optik erfordert auf der Seite der Software-Entwicklung erhöhten Aufwand im Gegensatz zu den anderen Umsetzungsmöglichkeiten. Die Erkennung von Objekten mit einer Kamera hängt zudem stark von den Umgebungsbedingungen ab. Weist ein Objekt z.B. zu wenig Kontrast zu seinem Hintergrund auf wird die Erkennung schwierig. Auch ein Scheinwerfer ist ein möglicher Störfaktor, der zu falschen Messergebnissen führen kann. Diese Probleme können mit einer Justierung der Kamera und der Algorithmen behoben werden. Von den möglichen Störfaktoren abgesehen liefert diese Art der Korbortung sehr präzise Ergebnisse.
 
-\textbf{Pixy}\newline
+Für die Erstellung der Bilder kann eine herkömmliche Webcam verwendet werden. Für den Raspberry Pi wird ausserdem eine günstige und praktische Kamera angeboten. Mittels der Kamera kann ein Bild fotografiert werden, welches ausgewertet wird um den Ort des Korbes zu bestimmen. Geprüft wurden Auswertungsmethoden auf Basis von Java und Python. In beiden Sprachen gibt es mehrere Bibliotheken, welche es erlauben Bildverarbeitung durchzuführen. Im Bereich Java wurde ImageJ (\href{http://imagej.nih.gov/ij/}{http://imagej.nih.gov/ij/}) und in Python wurde OpenCV (\href{http://docs.opencv.org/}{http://docs.opencv.org/}) angeschaut. In beiden Programmiersprachen war es möglich Objekte zu erkennen (siehe Anhang \ref{anhang-bildverarbeitung}).
 
-
+Eine weitere interessante Lösung für die Objekterkennung ist Pixy. Pixy vereint einen Bildsensor mit einem Prozessor und umgeht so das Problem mit den grossen Datenmengen die ein Bordcomputer (z.B. Raspberry Pi) verarbeiten muss. Zudem sind ist der Bildsensor extrem schnell und hochauflösend. Bei unseren Recherchen hat sich jedoch herausgestellt, dass Pixy mit dem Standartalgorithmus nur farbige Objekt erkennt. Für die Erkennung des Korbes muss der vom Hersteller gelieferte Algorithmus angepasst werden. Die Anpassung ist mit einem gewissen Aufwand und Risiken verbunden und muss gut überlegt werden. Detaillierte Informationen können dem Anhang \ref{anhang-pixy} entnommen werden.
 
 \subsubsection{Ultraschall}
 
