@@ -1,8 +1,8 @@
 \subsection{Ortung des Korbs}
-Die Fragestellung lautet: "Wo ist der Standort des Korbes?". Um Standorte von Objekten herauszufinden gibt es mehrere Technologien. Die Erkennung hat folgende Herausforderungen:
+Die Fragestellung lautet: ''Wo ist der Standort des Korbes?''. Um Standorte von Objekten herauszufinden gibt es mehrere Technologien. Die Erkennung hat folgende Herausforderungen:
 \begin{itemize}
 	\item Distanz 2 Meter
-	\item Objekt ist schwarz
+	\item Objekt ist schwarz (guter Kontrast zu Hintergrund)
 	\item Beleuchtung nicht konstant
 \end{itemize}
 
@@ -21,3 +21,5 @@ Eine weitere interessante Lösung für die Objekterkennung ist Pixy. Pixy verein
 Diese Umsetzung kommt aus mehreren Gründen nicht in Frage. Auf dem Markt gibt es keine Wärmebild Kameras, welche ins Budget passen. Andererseits wird sowohl der Korb wie auch die Wand dahinter dieselbe Wärme aufweisen.
 
 \subsubsection{Radar}
+
+Ein Radargerät sendet elektromagnetische Wellen aus und empfängt das reflektierte Echo. Aus den empfangenen, vom Objekt reflektierten Wellen kann man die Entfernung und die Bewegung eines Objektes bestimmen. Radar erkennt sehr gut Bewegungen auf den Sensor zu. Nicht so gut werden Bewegungen erkannt, die um den Sensor herum geschehen. Auch bei den grossen Elektronikhändler werden nur Bewegungsmelder mit einem Schaltausgang angeboten, der die Position eines Objektes nicht erkennen kann. Deshalb eignet sich die Technologie nicht für die Erkennung des Korbes.
