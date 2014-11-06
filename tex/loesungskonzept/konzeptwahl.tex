@@ -1,2 +1,71 @@
 \section{Konzeptwahl}
-Hier geht es darum alle Konzeptbewertungen zu vergleichen und ein konkretes zu favorisieren.
+Alle Konzepte werden nach einem einheitlichem Bewertungsraster bewertet. Jeder Punkt im Raster ist mit einer Gewichtung versehen. Diese Gewichtung ist ein Wert von 1-3. Jeder Punkt wird dann selbst mit einem Wert von 0-3 bewertet. Nachfolgend alle Punkte und die Bedeutung der Bewertung:\newline
+\begin{itemize}
+	\item Preis (Gewichtung 3)
+	\subitem 0 Punkte - Preis liegt nicht im Budget
+	\subitem 3 Punkte - Preis liegt im Budget
+	
+	\item Balltransport (Fähigkeit der Maschine die Bälle zu transportieren darunter zählt auch die Präzision) (Gewichtung 3)
+	\subitem 0 Punkte - Kann 2 oder weniger Bälle transportieren
+	\subitem 1 Punkt - Kann mind. 3 Bälle transportieren
+	\subitem 2 Punkte - Kann mind. 4 Bälle transportieren
+	\subitem 3 Punkte - Kann alle Bälle transportieren
+	
+	\item Robustheit (Robust gegenüber tangierende äussere Einflüsse wie Luftfeuchtigkeit oder Licht) (Gewichtung 3)
+	\subitem 0 Punkte - Grosse Probleme vorhanden
+	\subitem 1 Punkte - Braucht gewisse Voraussetzungen
+	\subitem 3 Punkte - Es sollte robust sein
+	
+	\item Zeit (Gewichtung 2)
+	\subitem 0 Punkte - Vorgang dauert länger als 40 Sekunden
+	\subitem 1 Punkt - Vorgang dauert max. 40 Sekunden
+	\subitem 2 Punkte - Vorgang dauert max. 30 Sekunden
+	\subitem 3 Punkte - Vorgang dauert max. 20 Sekunden
+	
+	\item Gewicht (Gewichtung 1)
+	\subitem 0 Punkte - Mehr als 4 Kilogramm
+	\subitem 1 Punkte - Maximal 4 Kilogramm
+	\subitem 3 Punkte - Maximal 2 Kilogramm
+	
+	\item Umsetzbarkeit (Gewichtung 2)
+	\subitem 0 Punkte - Viele Fragezeichen wie es umgesetzt wird
+	\subitem 1 Punkte - Fragezeichen wie es umgesetzt wird vorhanden
+	\subitem 3 Punkte - Keine Fragezeichen wie es umgesetzt wird
+	
+	\item Aufwand (Gewichtung 2)
+	\subitem 0 Punkte - Nicht möglich in der gegeben Zeit umzusetzen
+	\subitem 1 Punkte - Sehr aufwändig umzusetzen
+	\subitem 3 Punkte - Aufwand hält sich im Rahmen	
+	
+	\item Anforderungen (Gewichtung 3)
+	\subitem 0 Punkte - Erfüllt Pflichtanforderungen nicht
+	\subitem 2 Punkte - Erfüllt Pflichtanforderungen
+	\subitem 3 Punkte - Erfüllt Pflicht- und Wunschanforderungen
+	
+	\item Bauchgefühl (Gewichtung 1)
+	\subitem 0 Punkte - Schlechtes Bauchgefühl
+	\subitem 1 Punkte - Gemischtes Bauchgefühl
+	\subitem 3 Punkte - Gutes Bauchgefühl
+\end{itemize}
+Nach dem bewerten der einzelnen Konzepte werden die konkrete Punktgebung mit den Gewichtungen multipliziert. Alle Multiplikationen werden summiert.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l l l}
+		Kriterium & Gewichtung & Bewertung & Total \\
+		\hline
+		
+		Preis & 3 & ? & ? \\
+		Balltransport & 3 & ? & ? \\
+		Robustheit & 3 & ? & ? \\
+		Zeit & 2 & ? & ? \\
+		Gewicht & 1 & ? & ? \\
+		Umsetzbarkeit & 2 & ? & ? \\
+		Aufwand & 2 & ? & ? \\
+		Anforderungen & 3 & ? & ? \\
+		Aufwand & 1 & ? & ? \\
+		Total &  &  & ? \\
+	\end{tabular}
+	\caption{Bewertung}
+	\label{tab:quelle}
+\end{table}

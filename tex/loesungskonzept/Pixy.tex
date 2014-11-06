@@ -1,5 +1,5 @@
 \section{Kameramodul Pixy (CMUcam5)}
-
+\label{anhang-pixy}
 Pixy ist ein schneller Bildsensor, welcher Objekte erkennen kann und das Resultat (Position/Fläche) an einen beliebigen Controller sendet.
 
 Bildsensoren sind sehr flexibel, haben jedoch den Nachteil dass grosse Datenmengen anfallen und ein starker Prozessor für die Berechnung der Algorithmen benötigt wird. Pixy umgeht dieses Problem indem es einen Bildsensor mit einem Prozessor kombiniert. Pixy verarbeitet die Bilder vom Bildsensor und schickt die relevanten Informationen an den Controller (z.B. Raspberry Pi).
@@ -30,7 +30,7 @@ PixyMon ist die Konfigurationssoftware für Pixy. Verbindet man seinen Laptop pe
 
 \subsection{Schnittstelle}
 
-Alle 20ms sendet Pixy eine Liste von "Object Blocks" über die serielle Schnittstelle (UART, SPI, I$^2$C) an den Controller. Die Object Blocks werden nach Objektgrösse sortiert. Der Aufbau des Blockes kann der unteren Abbildung entnommen werden.
+Alle 20ms sendet Pixy eine Liste von \textit{Object Blocks} über die serielle Schnittstelle (UART, SPI, I$^2$C) an den Controller. Die Object Blocks werden nach Objektgrösse sortiert. Der Aufbau des Blockes kann der unteren Abbildung entnommen werden.
 
 \begin{figure}[h!]
 \centering
@@ -53,6 +53,3 @@ Da Pixy sehr vielversprechend unser Problem mit der Objekterkennung lösen konnt
 \caption{Pixy erkennt einen Leuchtstift}
 \label{fig:pixy_objekt}
 \end{figure}
-
-
-
