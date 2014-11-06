@@ -15,12 +15,14 @@ Für die Erstellung der Bilder kann eine herkömmliche Webcam verwendet werden. 
 Eine weitere interessante Lösung für die Objekterkennung ist Pixy. Pixy vereint einen Bildsensor mit einem Prozessor und umgeht so das Problem mit den grossen Datenmengen die ein Bordcomputer (z.B. Raspberry Pi) verarbeiten muss. Zudem sind ist der Bildsensor extrem schnell und hochauflösend. Bei unseren Recherchen hat sich jedoch herausgestellt, dass Pixy mit dem Standartalgorithmus nur farbige Objekt erkennt. Für die Erkennung des Korbes muss der vom Hersteller gelieferte Algorithmus angepasst werden. Die Anpassung ist mit einem gewissen Aufwand und Risiken verbunden und muss gut überlegt werden. Detaillierte Informationen können dem Anhang \ref{anhang-pixy} entnommen werden.
 
 \subsubsection{Ultraschall}
-Ultraschall bietet sich an als sehr einfache und günstige Technik für ein Ortungssystem.
+Ultraschall bietet sich an als sehr einfache und preiswerte Technik für ein Ortungssystem.
 Verschiedene Tests zeigten, dass typische Ultraschallmodule für die vorgesehene Anwendung
 nicht optimal sind (siehe Anhang \ref{sec:hc-sr04}).
 
 \subsubsection{Laser}
-
+Laser- bzw. Infrarotmessmodule bieten sich ähnlich wie Ultraschallmodule als einfache und
+preiswerte Ortungssysteme an. Auch hier haben praktische Testst gezeigt, dass einige
+Schwierigkeiten auftreten im projektnahen Umfeld \cite{wiki-laser}.
 
 \subsubsection{Wärmebild}
 Diese Umsetzung kommt aus mehreren Gründen nicht in Frage. Auf dem Markt gibt es keine Wärmebild Kameras, welche ins Budget passen. Andererseits wird sowohl der Korb wie auch die Wand dahinter dieselbe Wärme aufweisen.

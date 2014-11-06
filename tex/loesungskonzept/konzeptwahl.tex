@@ -1,26 +1,26 @@
 \section{Konzeptwahl}
-Alle Konzepte werden nach einem einheitlichem Bewertungsraster bewertet. Jeder Punkt im Raster ist mit einer Gewichtung versehen. Diese Gewichtung ist ein Wert von 1-3. Jeder Punkt wird dann selbst mit einem Wert von 0-3 bewertet. Nachfolgend alle Punkte und die Bedeutung der Bewertung:\newline
+Alle Konzepte werden nach einem einheitlichem Bewertungsraster bewertet. Jeder Punkt im Raster ist mit einer Gewichtung versehen. Diese Gewichtung ist ein Wert von 1 bis 3. Jeder Punkt wird selbst mit einem Wert von 0 bis 3 bewertet. Nachfolgend alle Punkte und die Bedeutung der Bewertung:\newline
 \begin{itemize}
 	\item Preis (Gewichtung 3)
 	\subitem 0 Punkte - Preis liegt nicht im Budget
 	\subitem 3 Punkte - Preis liegt im Budget
 	
-	\item Balltransport (Fähigkeit der Maschine die Bälle zu transportieren darunter zählt auch die Präzision) (Gewichtung 3)
+	\item Balltransport (Gewichtung 3)
 	\subitem 0 Punkte - Kann 2 oder weniger Bälle transportieren
 	\subitem 1 Punkt - Kann mind. 3 Bälle transportieren
 	\subitem 2 Punkte - Kann mind. 4 Bälle transportieren
 	\subitem 3 Punkte - Kann alle Bälle transportieren
 	
-	\item Robustheit (Robust gegenüber tangierende äussere Einflüsse wie Luftfeuchtigkeit oder Licht) (Gewichtung 3)
-	\subitem 0 Punkte - Grosse Probleme vorhanden
-	\subitem 1 Punkte - Braucht gewisse Voraussetzungen
-	\subitem 3 Punkte - Es sollte robust sein
+	\item Robustheit (Gewichtung 3)
+	\subitem 0 Punkte - Umgebungsbedingungen haben starken Einfluss
+	\subitem 1 Punkte - Umgebungsbedingungen haben geringen Einfluss
+	\subitem 3 Punkte - Umgebungsbedingungen haben keinen Einfluss
 	
 	\item Zeit (Gewichtung 2)
-	\subitem 0 Punkte - Vorgang dauert länger als 40 Sekunden
-	\subitem 1 Punkt - Vorgang dauert max. 40 Sekunden
-	\subitem 2 Punkte - Vorgang dauert max. 30 Sekunden
-	\subitem 3 Punkte - Vorgang dauert max. 20 Sekunden
+	\subitem 0 Punkte - Vorgang dauert länger als Anforderungen
+	\subitem 1 Punkt - Vorgang dauert lange
+	\subitem 2 Punkte - Vorgang dauert schnell
+	\subitem 3 Punkte - Vorgang dauert sehr schnell
 	
 	\item Gewicht (Gewichtung 1)
 	\subitem 0 Punkte - Mehr als 4 Kilogramm
@@ -42,30 +42,33 @@ Alle Konzepte werden nach einem einheitlichem Bewertungsraster bewertet. Jeder P
 	\subitem 2 Punkte - Erfüllt Pflichtanforderungen
 	\subitem 3 Punkte - Erfüllt Pflicht- und Wunschanforderungen
 	
-	\item Bauchgefühl (Gewichtung 1)
+	\item Bauchgefühl (Gewichtung 3)
 	\subitem 0 Punkte - Schlechtes Bauchgefühl
 	\subitem 1 Punkte - Gemischtes Bauchgefühl
 	\subitem 3 Punkte - Gutes Bauchgefühl
 \end{itemize}
-Nach dem bewerten der einzelnen Konzepte werden die konkrete Punktgebung mit den Gewichtungen multipliziert. Alle Multiplikationen werden summiert.
+Nach dem Bewerten der einzelnen Konzepte werden die konkrete Punktgebung mit den Gewichtungen multipliziert. Alle Multiplikationen werden summiert.
 
 \begin{table}[h!]
+	\renewcommand{\arraystretch}{1.5}
 	\centering
-	\begin{tabular}{l l l l}
-		Kriterium & Gewichtung & Bewertung & Total \\
+	\begin{tabular}{l l l l l}
+		Bewertungspunkt & Gewichtung & Konzept Drehrad & Konzept Luftdruck & Konzept Propeller \\
 		\hline
-		
-		Preis & 3 & ? & ? \\
-		Balltransport & 3 & ? & ? \\
-		Robustheit & 3 & ? & ? \\
-		Zeit & 2 & ? & ? \\
-		Gewicht & 1 & ? & ? \\
-		Umsetzbarkeit & 2 & ? & ? \\
-		Aufwand & 2 & ? & ? \\
-		Anforderungen & 3 & ? & ? \\
-		Bauchgefühl & 1 & ? & ? \\
-		Total &  &  & ? \\
+		Preis 			& 3 & 3 (9) & 3 (9) & 3 (9) \\
+		Balltransport 	& 3 & 2 (6)	& 1 (3) & 1 (3) \\
+		Robustheit 		& 3 & 3 (9) & 3 (9) & 3 (9) \\
+		Zeit 			& 2 & 2 (4) & 0 (0) & 3 (6) \\
+		Gewicht 		& 1 & 1 (1) & 3 (3) & 0 (0) \\
+		Umsetzbarkeit 	& 2 & 1 (2) & 1 (2) & 0 (0) \\
+		Aufwand 		& 2 & 3 (6) & 1 (2) & 1 (2) \\
+		Anforderungen 	& 3 & 2 (6) & 2 (6) & 2 (6) \\
+		Bauchgefühl 	& 3 & 3 (0) & 0 (0) & 1 (3) \\
+		\hline
+		Total 			&  	& 46 	& 34 	& 36 	\\
 	\end{tabular}
 	\caption{Bewertung}
-	\label{tab:quelle}
+	\label{tab:bewertung}
 \end{table}
+
+Das Konzept Drehrad hat nach der Bewertung die höchste Punktzahl erreicht und wird somit ausgewählt.
