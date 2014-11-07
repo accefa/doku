@@ -2,10 +2,10 @@
 \label{bordcomputer}
 Die hier als Bordcomputer bezeichnete Komponente steht allgemein für eine
 Einheit, welche die \emph{Intelligenz} des Gerätes enthält. Man assoziert
-mit dem Bordcomputer geweisse Fähigkeiten wie
+mit dem Bordcomputer gewisse Fähigkeiten wie
 \begin{itemize}
 	\item Kommunikation (\emph{digitale Datenübertragung})
-	\item Aktorenansteuerung
+	\item Aktoren-Ansteuerung
 	\item Sensorauswertung
 	\item Regelung
 \end{itemize}
@@ -13,28 +13,28 @@ mit dem Bordcomputer geweisse Fähigkeiten wie
 Die Evaluation eines solchen Bordcomputers kann sehr unterschiedlich 
 ausfallen in Abhängigkeit von den gewählten Eigenschaften bzw. 
 Ansprüchen an das Gerät. Hier gibt es einige typische Strategien bei der
-Auswahl welche je nach Einsatzgebiet gewählt werden.
+Auswahl, welche je nach Einsatzgebiet gewählt werden.
 \begin{description}
 	\item[Industrieanwendung] Die Einheit sollte möglichst 
 		Einsatzbereit eingekauft werden können und nur eine 
-		geringfügige Parametriereung erfordern --- der Preis 
+		geringfügige Parametrierung erfordern --- der Preis 
 		spielt keine Rolle.
 	\item[Massenproduktion] Die Einheit sollte weitestgehend eine
 		Eigenentwicklung sein welche genau auf die Aufgaben
-		der Applikation zugenschnitten ist --- es muss möglichst
+		der Applikation zugeschnitten ist --- es muss möglichst
 		preiswert sein.
-	\item[Einzelanfertigung] Die Einheit sollte möglicht aus 
+	\item[Einzelanfertigung] Die Einheit sollte möglichst aus 
 		gebrauchsfertigen Modulen (Funktionsgruppen) 
 		zusammengestellt werden, welche die jeweiligen 
 		Anforderungen optimal erfüllen --- es soll schnell zum
 		Ziel führen.
 \end{description}
 
-Für das vorliegende Projekt ist die dritte Startegie gewählt worden, 
+Für das vorliegende Projekt ist die dritte Strategie gewählt worden, 
 welche sich daran orientiert, möglichst effizient ans Ziel zu gelangen.
 Diese \emph{Effizienz} muss für eine konkrete Evaluation jedoch noch
 genauer spezifiziert werden. Im vorliegenden Fall ist dies definiert
-durch die folgenden Kriterien
+durch die folgenden Kriterien:
 
 \begin{itemize}
 	\item Fähigkeiten
@@ -46,9 +46,9 @@ durch die folgenden Kriterien
 	\item Preis
 \end{itemize}
 
-Unabhängig von den oben genannten Kriterien ist auch ein einschneidender
-Entscheid getroffen worden, welcher definiert, dass der Boardcomputer
-fähig sein muss ein vollwertiges und gängiges Betriebsystem zu 
+Unabhängig von den oben genannten Kriterien ist ein einschneidender
+Entscheid getroffen worden, welcher definiert, dass der Bordcomputer
+fähig sein muss ein vollwertiges und gängiges Betriebssystem zu 
 unterstützen. Dieser Entscheid ist zustande gekommen mit der Absicht, die
 Disziplinen Elektrotechnik und Informatik so nahe wie möglich 
 zusammenzuführen. Dies vereinfacht die Zusammenarbeit, verhindert 
@@ -65,7 +65,7 @@ der britischen Raspberry Pi Foundation \cite{RPiFoundation}.
 
 Im Gegensatz zu üblichen Computern hat dieser alle für den Betrieb
 relevanten Systemkomponenten fix installiert auf einer Platine. Hiervon
-ausgenommen ist die Spannungsversogung und der Massenspeicher, welche
+ausgenommen ist die Spannungsversorgung und der Massenspeicher, welche
 jedoch mit gängigen Standards implementiert sind (MicroUSB bzw. MicroSD).
 
 Der Raspberry Pi ist inzwischen sehr weit verbreitet. Dies spiegelt sich
@@ -87,7 +87,7 @@ Ergebnisse zustande kamen.
 	\item[Fähigkeiten] Der Raspberry Pi ist in der Lage direkte
 		LowLevel Ansteuerung durchzuführen mittels einer Vielzahl
 		von Programmiersprachen. Dies ist insbesondere gegeben
-		durch die Tatsache, dass ein vollwertiges Betriebsystem
+		durch die Tatsache, dass ein vollwertiges Betriebssystem
 		eingesetzt wird. Durch den Einsatz eines modernen
 		Betriebssystems sind auch viele Erweiterungen für Hard- 
 		und Software möglich, welche auch auf gewöhnlichen 
@@ -100,11 +100,11 @@ Ergebnisse zustande kamen.
 		in Betrieb genommen werden kann. 
 	\item[Verbreitungsgrad] Der Raspberry Pi ist einer der
 		populärsten Einplatinencomputer mit über 3 Millionen
-		verfauften Exemplaren \cite{liz}.
-	\item[Leistung] Der Raspberry Pi ist nicht der leistungssrärkste
+		verkauften Exemplaren \cite{liz}.
+	\item[Leistung] Der Raspberry Pi ist nicht der leistungsstärkste
 		Vertreter unter den Einplatinencomputern, bietet dennoch
 		gute Kennwerte und besitzt das beste
-		Preis-Leistungsverhältnis mit dem geringen Preis \cite{elv}.
+		Preis-Leistungsverhältnis \cite{elv}.
 	\item[Modifizierbarkeit] Der Raspberry Pi bietet ein vorbereitetes
 		Interface an für eine Hardwareerweiterung, welches direkt
 		die GPIO und Peripherie-IO zur Verfügung stellt. Auch
@@ -115,9 +115,9 @@ Ergebnisse zustande kamen.
 		Bildungs- und Experimentierzwecken entwickelt wurde, 
 		bietet der Hersteller auch relevante Daten an für dessen
 		Einsatz \cite{RPiSchematics}. Die Entwicklung im Bereich der
-		erwerblichen Literatur oder der frei verfügbaren
+		vorhandenen Literatur oder der frei verfügbaren
 		Tutorials korreliert mit den Verkaufszahlen und es 
-		existieren grosse Benutzergemeindschaften.
+		existieren grosse Benutzergemeinschaften.
 	\item[Preis] Die Ziele der Raspberry Pi Foundation bei der
 		Entwicklung des Raspberry Pi waren Kompaktheit und ein 
 		niedriger Preis \cite{RPiFoundation}. Diese Ziele zeigen sich
@@ -146,13 +146,13 @@ Sollte der Fall eintreten, dass gewisse LowLevel Funktionalitäten nicht
 oder nur unter ungünstigen Bedingungen mit dem Raspberry Pi realisiert 
 werden können, wird für diese Funktionen ein dediziertes LowLevel 
 Mikrocontroller System hinzugezogen. Solche LowLevel Funktionen können
-Hardware-Interrupts oder direkte Peripheriekomponenten des Mirkocontrollers
+Hardware-Interrupts oder direkte Peripheriekomponenten des Mikrocontrollers
 betreffen auf dem auch das Betriebssystem läuft. Diese LowLevel Funktionen
 verlangen im Extremfall ein Anpassen des Kernels bzw. das Erstellen eigener
 Kernelmodule (Treiberprogramme). Der Overhead, welcher sich beim 
 Kerneldevelopment ergeben kann, ist im Verhältnis zum Ergebnis suboptimal. 
 Um auf solche Probleme ein Fallback zu haben wird ein einfaches 
-Mikrocontrollersystem evaluiert welches ohne Betriebsystem auskommt und
+Mikrocontrollersystem evaluiert welches ohne Betriebssystem auskommt und
 dadurch wesentlich einfacher und dedizierter programmiert werden kann.
 
 \begin{figure}[h!]
@@ -203,16 +203,16 @@ Pi herauskristallisiert.
 \begin{description}
 	\item[BeagleBone Black] Das BeagleBone Black stellt ein direktes
 		Konkurrenzprodukt dar für den Raspberry Pi, denn es bewegt
-		sich nahe an dessen Preissegment und bietet im Verlgeich
+		sich nahe an dessen Preissegment und bietet im Vergleich
 		deutlich mehr Features (insbesondere im LowLevel Bereich)
 		und eine etwas Leistungsstärkere Prozessorarchitektur. Zudem 
 		ist die gesamte Plattform offen im Sinne von OpenHardware, 
-		denn es werden ofiziell sämtliche Daten zum BeagleBone Black
+		denn es werden offiziell sämtliche Daten zum BeagleBone Black
 		angeboten. Diese Plattform ist zudem auch systemkompatibel
 		mit dem Raspberry Pi, somit kann ebenfalls ein ArchLinux
 		auf dem Gerät installiert werden und alle bestehende 
 		Software kann übertragen werden. Das BeagleBoard verfügt
 		über eine kleinere Benutzergemeinschaft und auch weniger
-		Literatur und sontige Referenzen im Vergleich zum Raspberry
+		Literatur und sonstige Referenzen im Vergleich zum Raspberry
 		Pi.
 \end{description}
