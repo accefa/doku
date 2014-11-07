@@ -5,7 +5,7 @@ Die Bildverarbeitung wurde auf Basis von Java und Python geprüft. In beiden Pro
 \subsection{Java}
 In Java wurde die Bibliothek ImageJ\footnote{\href{http://imagejdocu.tudor.lu/}{http://imagejdocu.tudor.lu/}} angeschaut. ImageJ ist modular aufgebaut und lässt sich sowohl Nutzen als auch Erweitern. Zweiteres macht die Bibliothek attraktiv, denn es gibt bereits einige Erweiterungen im Netz. Eine solche Erweiterung nennt sich FeatureFinder\footnote{\href{http://imagejdocu.tudor.lu/doku.php?id=plugin:analysis:feature_finder:start}{http://imagejdocu.tudor.lu/doku.php}}. Diese Erweiterung verlangt als Input das zu suchende Objekt und das Bild auf welchem das Objekt gefunden werden muss. In folgendem Beispiel wird gezeigt wie einfach sich ein Bild zuschneiden lässt.
 
-\begin{lstlisting}[caption={Bild zuschneiden mit ImageJ}]
+\begin{lstlisting}[caption={Bild zuschneiden mit ImageJ}, language=Java]
 public void crop(ImagePlus imp, int targetWidth, int targetHeight) {
 	ImageProcessor ip = imp.getProcessor();
 	int cropX = ip.getWidth() / 2;
