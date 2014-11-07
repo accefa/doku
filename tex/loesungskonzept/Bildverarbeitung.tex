@@ -19,7 +19,7 @@ public void crop(ImagePlus imp, int targetWidth, int targetHeight) {
 
 Es ist auch möglich das Bild, auf welchem der Korb zu suchen ist, mit eigenen Low-Level Bildverarbeitung Operationen zu verarbeiten. Beispielsweise kann von links nach rechts die Pixel untersucht wurden. Dort wo der Korb steht weisen die einzelnen Pixel eine anderen Charakteristika auf. Auch das Auslesen eines Pixels auf dem Bild ist simpel.
 
-\begin{lstlisting}[caption={Auslesen eines Pixels mit ImageJ}]
+\begin{lstlisting}[caption={Auslesen eines Pixels mit ImageJ}, language=Java]
 private void readSomePixel() {
 	ImagePlus im = new ImagePlus("C:/tmp/ALLUSB/Bilder/Scannen0001.jpg");
 	ImageProcessor imp = im.getProcessor();
