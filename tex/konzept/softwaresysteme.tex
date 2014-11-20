@@ -1,2 +1,18 @@
 \subsection{Softwaresysteme}
-TODO Softwaresubsysteme
+Mit Software wird die Kommunikation, die Ortung des Korbes sowie die Steuerung umgesetzt. Dazu werden in den folgenden Kapitel die Architektur der Software sowie einzelne Algorithmen beschrieben.
+
+\subsubsection{Kommunikation}
+
+\subsubsection{Ortung des Korbes}
+Der Ort des Korbes wird optisch bestimmt. Dazu wird zu Beginn des Prozesses ein Foto geschossen. Dieses Bild wird mittels eines Algorithmus analysiert um die Koordinaten des Korbes zu bestimmen.\\
+\\
+Algorithmus\\
+Es wurden zwei Ideen für die Entwicklung des Algorithmus verfolgt. Der Eine basiert auf eigenen Überlegungen und der Andere auf bestehende Kanten- bzw. Objekterkennung. Die grösste Herausforderung stellen die unterschiedlichen Lichtverhältnisse dar. Der Algorithmus muss so stabil sein, dass dieser damit umgehen kann. Der Aufbau wird mit Licht von oben beschienen. Auch mit Licht von der Seite durch die Fenster ist zu rechnen.\\
+\\
+Algorithmus: Eigene Überlegungen\\
+Im ersten Schritt wird das Bild zugeschnitten. Dies hat den Vorteil, dass irrelevante Informationen verschwinden so wird das Bild physisch kleiner und auch die nächsten Verarbeitungsschritte sind schneller. Im zweiten Schritt wird der Kontrast des Bildes verstärkt. Das Histogramm verbreitert sich und hellere Punkte werden Heller und dunklere Punkte noch dunkler. Dann folgt die Konvertierung des Bildes nach Graustufen. Jedes Pixel hat einen gleich grossen Anteil an R-, G- und B-Werten. Zum Schluss wird eine einzelne Pixel-Linie analysiert. Dabei wird ersichtlich, dass es einen Bereich gibt, wo mehrere Pixel mit einem sehr tiefen RGB Wert aufeinander folgen. Umso tiefer die RGB Werte sind umso dunkler ist es dort (RGB(0,0,0) = black).
+\\
+Algorithmus: Kanten- und Objekterkennung\\
+TODO
+
+\subsubsection{Steuerung}
