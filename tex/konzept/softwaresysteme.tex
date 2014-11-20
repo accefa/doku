@@ -2,6 +2,33 @@
 Mit Software wird die Kommunikation, die Ortung des Korbes sowie die Steuerung umgesetzt. Dazu werden in den folgenden Kapitel die Architektur der Software sowie einzelne Algorithmen beschrieben.
 
 \subsubsection{Kommunikation}
+Die Kommunikation erfolgt über Wireless LAN (WLAN). Das Raspberry PI auf der Ballwurfmaschine stellt einen Access Point zur Verfügung mit welchem sich externe Steuerungseinheiten verbinden können. Die primäre externe Steuerungseinheit ist ein Notebook.\\
+Auf dem PI werden Webservices angeboten, welche von dem Notebook aufgerufen werden können. Jede gängige Programmiersprache bietet Unterstützung für Webservices an. Dadurch schränkt man die Wahl der externen Steuerungseinheit nicht ein. Diese muss einzig TCP/IP-Stack unterstützen.\\
+\\
+Das Notebook registriert sich zu Beginn beim Raspberry PI für verschiedene Operationen. Das Notebook soll folgende Meldungen vom PI während des Prozesses erhalten: Aktuelle Tätigkeiten (Protokoll), Berechnungsaufgaben und zum Schluss das Stoppsignal. Das Stoppsignal wird explizit ausgelagert, da es eine grosse Bedeutung im Ablauf hat. Sobald dieses Signal an das Notebook gelangt, wird die Zeit gestoppt. Für all diese Informationen muss sich das Notebook vorgängig beim PI registrieren. Diese Granularität ermöglicht es, dass beispielsweise ein Mainframe explizit für die Berechnung eingesetzt wird oder dass auf einem Mobile-Device nur das Protokoll angezeigt wird.
+\\
+Auf dem Raspberry PI erfolgt die Implementierung in Python. Mittels Python lassen sich Webservices realisieren und gleichzeitig bietet es eine sehr einfache API um auf serielle Schnittstellen zuzugreifen. Allfällige Inputs vom Web-Interface können so direkt an die Kamera und Motoren weitergeleitet werden. Auf dem PI werden zwei Schnittstellen angeboten. Zum einen das Registrations-Interface und zum anderen die Operate-Schnittstelle.\\
+\\
+Die externe Steuerungseinheit ist völlig unabhängig vom PI und muss lediglich das Client-Interface als Webinterface implementieren sofern es sich für die gegeben Funktionen am PI registriert.\\
+\\
+Architektur\\
+TODO BILD
+\\
+Schnittstellenbeschreibung
+
+Schnittstelle Registration
+- registerStopp
+- registerCalculation
+- registerProtocol
+
+Schnittstelle Operate
+- sendStartSignal
+- sendCalculationResults
+
+Schnittstelle Client
+- receiveStopp
+- receiveCalculation
+- receiveProtocoll
 
 \subsubsection{Ortung des Korbes}
 Der Ort des Korbes wird optisch bestimmt. Dazu wird zu Beginn des Prozesses ein Foto geschossen. Dieses Bild wird mittels eines Algorithmus analysiert um die Koordinaten des Korbes zu bestimmen.\\
