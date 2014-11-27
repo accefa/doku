@@ -9,8 +9,7 @@
 *.synctex.gz
 
 # latex pdf output
-*doku.pdf
-*Team_39_*.pdf
+tex/*/Team_39_*.pdf
 
 # temporary files
 *.swp
