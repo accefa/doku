@@ -1,19 +1,27 @@
-\section{Modellierung als endlicher Automat}
+Der allgemeine Ablauf der autonomen Wurfmaschine kann als endlicher Automat
+moddeliert werden, denn es gibt einen definierten Einstiegs- und 
+Ausstiegspunkt. Der Einstieg (Start) ist definiert durch das Aufsuchen des
+Zielobjektes und der Ausstiegspunkt (Ende) ist gegeben durch das Fehlen
+weiterer Wurfobjekte. Zwischen Start und Ende muss das Zielobjekt
+identifiziert, die Maschine danach ausgerichtet, die Wurfautomatik
+parametriert und schlussendlich der Wurf durchgeführt werden.
 
 \begin{figure}[h!]
 	\centering
 \begin{tikzpicture}[shorten >=2pt,node distance=3cm,on grid,auto]
-	\node[state,initial] 	(q_0) 						{$q_0$};
-	\node[state] 			(q_1) [above right=of q_0]	{$q_1$};
-	\node[state]			(q_2) [right=of q_1]		{$q_2$};
+	\node[state,initial] 	(q_0) 				{$q_0$};
+	\node[state] 		(q_1) [above right=of q_0]	{$q_1$};
+	\node[state]		(q_2) [right=of q_1]		{$q_2$};
 	\node[state,accepting]	(q_3) [below right=of q_2]	{$q_3$};
 	\path[->]
-		(q_0)	edge [loop right] node	{suche Korb}	(q_0)
+		(q_0)	edge [loop below] node	{suche Korb}	(q_0)
 		(q_0)	edge node 				{Korb entdeckt} (q_1)
 		(q_1)	edge [loop above] node	{!ausgerichtet}	(q_1)
 		(q_1)	edge node 				{ausgerichtet}	(q_2)
 		(q_2)	edge [loop above] node	{!Solldrehzahl}	(q_2)
-		(q_2)	edge node				{Solldrehzahl}	(q_3);
+		(q_2)	edge node				{Solldrehzahl}	(q_3)
+		(q_3)	edge [loop right] node {ausgeschossen}	(q_3)
+		(q_3)	edge node				{restart}	(q_0);
 \end{tikzpicture}
 	\caption{Autonome Wurfmaschine modellitert als endlicher Automat}
 \end{figure}
