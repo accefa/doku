@@ -1,15 +1,12 @@
-DOCUMENT = Team_39_Konzept
+DOCUMENT = Team_39_Produktanforderungen
 
-.PHONY: doc bib clean
+.PHONY: doc clean
 
 doc:
 	pdflatex $(DOCUMENT).tex
 	for i in {1..5}; do \
 		pdflatex $(DOCUMENT).tex; \
 	done
-
-bib:
-	bibtex $(DOCUMENT).aux
 
 clean:
 	rm *.aux
