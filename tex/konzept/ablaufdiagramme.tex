@@ -1,4 +1,30 @@
 \subsection{Ablaufdiagramm}
 
 \subsubsection{Übersicht}
+Der allgemeine Ablauf der autonomen Wurfmaschine kann als endlicher Automat
+modeliert werden, denn es gibt einen definierten Einstiegs- und 
+Ausstiegspunkt. Der Einstieg (Start) ist definiert durch das Startsignal vom Smartphone und der Ausstiegspunkt (Ende) ist gegeben wenn der Ballvorschub den vorderen Endpunkt erreicht hat. Zwischen Start und Ende muss das Zielobjekt
+identifiziert, die Maschine danach ausgerichtet, die Wurfautomatik
+parametriert und schlussendlich der Wurf durchgeführt werden.
+
 \input{fsm}
+
+\subsubsection{Zustandsbeschreibungen}
+\begin{itemize}
+	
+	\item Korb suchen ($q_{0}$) \\ \\
+		  Nachdem das Startsignal von einem Smartphone drahtlos übertragen wurde, wechselt der Automat in den Zustand \textit{Korb suchen} und versucht den Korb zu detektiern. Wurde der Korb entdeckt wird in den nächsten Zustand gewechselt. Der Korb wird immer entdeckt, das heisst aber nicht dass die richtige Position zurückgegeben wurde.
+		  
+	\item Plattform ausrichten ($q_{1}$) \\ \\
+		  Wurde die Position vom vorherigen Zustand bestimmt, wird in den Zustand \textit{Plattform ausrichten} gewechselt und die Plattform wird anhand der Positionsdaten ausgerichtet. Ist die Ausrichtung abgeschlossen wird in den nächsten Zustand gewechselt.
+		  
+	\item Drehzahl erreichen ($q_{2}$) \\ \\
+		  Die Plattform ist ausgerichtet und der Antrieb des Drehrades wird gestartet. Damit immer von den gleichen Anfangsbedingungen ausgegangen werden kann, muss zuerst eine vorher definierte Drehzahl erreicht werden. Es wird die Anlaufverzögerung des Motors abgewartet und gemessen ob die gewünschte Drehzahl erreicht wurde. Sobald die Solldrehzahl erreicht wurde wird in den nächsten Zustand gewechselt.
+		  
+	\item Ballvorschub starten ($q_{3}$) \\ \\
+		  Die Plattform ist ausgerichtet und die Solldrehzahl des Drehrades wurde erreicht. Die Ballwurfmaschine ist somit abschussbereit. Als nächstes wird der Spindelantrieb des Ballvorschubes gestartet. Der Ballvorschub führt die Bälle an das Drehrad heran und die Bälle werden abgeworfen. Sobald der Ballvorschub den vorderen Endpunkt erreicht hat, wurden alle Bälle abgeworfen.
+		  
+	\item Stoppsignal senden ($q_{4}$) \\ \\
+		  Nachdem alle Bälle abgeworfen wurden, wird eine kurze Zeit gewartet damit sicher alle Bälle im Korb sind. Danach wird das Stoppsignal zurück an das Smartphone gesendet und der Automat hat seinen Endzustand erreicht.	  
+		  
+\end{itemize}
