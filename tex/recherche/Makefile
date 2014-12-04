@@ -1,4 +1,4 @@
-DOCUMENT = Team_39_Konzept
+DOCUMENT = Team_39_Technologierecherche
 
 .PHONY: doc bib clean
 
