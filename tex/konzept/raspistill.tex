@@ -1,1 +1,15 @@
+\label{ss-schnittstelle-raspistill}
 TODO raspistill beschreiben und Verweiss auf Doku im Internet \href{http://www.raspberrypi.org/wp-content/uploads/2013/07/RaspiCam-Documentation.pdf}{Link zu Doku}
+
+
+\begin{lstlisting}[language=bash]
+raspistill --nopreview --quality 50 -roi 0.5,0.5,0.25,0.25 --contrast 50 -cfx 128:128 
+\end{lstlisting}
+So sieht einen Aufruf der Raspberry PI Kamera aus. 
+\begin{itemize}
+	\item --nopreview: Optimierung - Kamera macht sonst immer ein Frame und zeigt es direkt an.
+	\item --quality 50: Optimierung - Tests haben gezeigt, dass die Qualität von 50 genügt. Die Bildgrösse wird somit einiges kleiner.
+	\item -roi: Bild zuschneiden
+	\item --contrast: Kontrast erhöhen
+	\item -cfk 128:128: Graustufen setzen
+\end{itemize} 
