@@ -3,7 +3,7 @@ Mit Software wird die Kommunikation zwischen externer Steuerungseinheit und Ball
 
 \subsubsection{Kommunikation zwischen externe Steuerungseinheit und Ballwurfmaschine}
 Die Kommunikation erfolgt über Wireless LAN (WLAN). Das Raspberry PI, welches auf der Ballwurfmaschine installiert ist, stellt einen Access Point zur Verfügung mit welchem sich externe Steuerungseinheiten verbinden können. Die primäre externe Steuerungseinheit ist ein Notebook.\\
-Auf dem PI werden Webservices angeboten, welche von dem Notebook aufgerufen werden können. Jede gängige Programmiersprache bietet Unterstützung für Webservices an. Dadurch schränkt man die Wahl der externen Steuerungseinheit nicht ein. Diese muss einzig den TCP/IP-Stack unterstützen. Die Webservices auf Seite des Raspberry PI werden mittels Python und mit Hilfe der Library web.py umgesetzt. Auf Seite der externen Steuerungseinheit gibt es eine Benutzeroberfläche, welche den Prozess anstossen kann (siehe UI-Skizze in Abschnitt \ref{ss-config-paramater-ortung-orb}).
+Auf dem PI werden Webservices angeboten, welche von dem Notebook aufgerufen werden können. Jede gängige Programmiersprache bietet Unterstützung für Webservices an. Dadurch schränkt man die Wahl der externen Steuerungseinheit nicht ein. Diese muss einzig den TCP/IP-Stack unterstützen. Die Webservices auf Seite des Raspberry PI werden mittels Python und mit Hilfe der Library web.py umgesetzt. Auf Seite der externen Steuerungseinheit gibt es eine Benutzeroberfläche, welche den Prozess anstossen kann (siehe UI-Skizze Bereich Ballwurf in Abschnitt \ref{ss-config-paramater-ortung-orb} ).
 
 \subsubsection{Ortung des Korbes}
 Der Ort des Korbes wird optisch bestimmt. Dazu wird zu Beginn des Prozesses ein Foto mittels der Raspberry PI Kamera geschossen. Dieses Bild wird anschliessend auf dem Raspberry PI mittels eines Algorithmus analysiert.\\
@@ -30,20 +30,9 @@ Auf der Abbildung sind die einzelnen Schritte zu erkennen, welche auf das Foto a
 	
 	\item Schritt 5 - Umwandlung Bild-Koordinaten zu physischem Ort: Sobald der Punkt des Korbes auf dem Bild bekannt ist, kann der physische Ort bestimmt werden. Da die Kamera immer am gleichen Ort ist und der Zuschnitt des Bildes gleich erfolgt, kann eine Mapping-Tabelle dafür verwendet werden. In dieser Tabelle findet man die Zuweisung des Bild-Punktes zu dem physischen Ort. Als Output erzeugt der Algorithmus den Winkel zwischen Korb und Kamera.
 \end{itemize} 
-Die Raspberry PI Kamera kann bereits einige Schritte gleich selbst durchführen. Dazu zählen Schritt 1, 2 und 3.
-\begin{lstlisting}[language=bash]
-raspistill --nopreview --quality 50 -roi 0.5,0.5,0.25,0.25 --contrast 50 -cfx 128:128 
-\end{lstlisting}
-So sieht einen Aufruf der Raspberry PI Kamera aus. 
-\begin{itemize}
-	\item --nopreview: Optimierung - Kamera macht sonst immer ein Frame und zeigt es direkt an.
-	\item --quality 50: Optimierung - Tests haben gezeigt, dass die Qualität von 50 genügt. Die Bildgrösse wird somit einiges kleiner.
-	\item -roi: Bild zuschneiden
-	\item --contrast: Kontrast erhöhen
-	\item -cfk 128:128: Graustufen setzen
-\end{itemize} 
-
-Anschliessend wird Schritt 4 und 5 auf dem Raspberry PI implementiert. 
+Die Raspberry PI Kamera kann bereits einige Schritte gleich selbst durchführen. Dazu zählen Schritt 1, 2 und 3 (siehe Abschnitt \ref{ss-schnittstelle-raspistill}). Das heisst der Algorithmus muss sich selbst nicht um diese Transformationen kümmern, muss also nur die Parameter an die Kamera weiterreichen.\\
+\\
+Die Schritte 4 und 5 müssen jedoch auf dem Raspberry PI implementiert werden.
 
 \begin{lstlisting}[language=Python]
 from PIL import Image
@@ -68,10 +57,10 @@ Damit die Parameter angepasst werden können, wird eine Software auf Seite der e
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.75]{../../fig/fotoshoot-configurator.png}
-	\caption{Fotoshoot-Configurator Skizze}
+	\caption{Ballwurfmaschine-UI Skizze}
 \end{figure}
 
-Das UI <Fotoshoot - Configurator> lässt alle relevanten Werte konfigurieren. Es erhält jeweils das aktuelle Foto, welches in diesem Prozess mit Informationen angereichert wird. Der Algorithmus markiert den Korb mit einem Fadenkreuz und schreibt den Winkel unten rechts aufs Bild.
+Das UI der Ballwurfmaschine lässt im Bereich Fotoshoot alle relevanten Werte konfigurieren. Es erhält jeweils das aktuelle Foto, welches in diesem Prozess mit Informationen angereichert wird. Der Algorithmus markiert den Korb mit einem Fadenkreuz und schreibt den Winkel unten rechts aufs Bild.
 
 \subsubsection{Steuerung der Motoren}
 TODO Ervin
