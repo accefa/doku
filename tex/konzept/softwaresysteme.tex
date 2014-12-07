@@ -1,10 +1,6 @@
 \subsection{Softwaresysteme}
 Mit Software wird die Kommunikation zwischen externer Steuerungseinheit und Ballwurfmaschine, die Ortung des Korbes, sowie deren Konfiguration und die Steuerung der Motoren umgesetzt. In den folgenden Kapitel werden auf die einzelnen Komponenten eingegangen.
 
-\subsubsection{Kommunikation zwischen externe Steuerungseinheit und Ballwurfmaschine}
-Die Kommunikation erfolgt über Wireless LAN (WLAN). Das Raspberry PI, welches auf der Ballwurfmaschine installiert ist, stellt einen Access Point zur Verfügung mit welchem sich externe Steuerungseinheiten verbinden können. Die primäre externe Steuerungseinheit ist ein Notebook.\\
-Auf dem PI werden Webservices angeboten, welche von dem Notebook aufgerufen werden können. Jede gängige Programmiersprache bietet Unterstützung für Webservices an. Dadurch schränkt man die Wahl der externen Steuerungseinheit nicht ein. Diese muss einzig den TCP/IP-Stack unterstützen. Die Webservices auf Seite des Raspberry PI werden mittels Python und mit Hilfe der Library web.py umgesetzt. Auf Seite der externen Steuerungseinheit gibt es eine Benutzeroberfläche, welche den Prozess anstossen kann (siehe UI-Skizze Bereich Ballwurf in Abschnitt \ref{ss-config-paramater-ortung-orb} ).
-
 \subsubsection{Ortung des Korbes}
 Der Ort des Korbes wird optisch bestimmt. Dazu wird zu Beginn des Prozesses ein Foto mittels der Raspberry PI Kamera geschossen. Dieses Bild wird anschliessend auf dem Raspberry PI mittels eines Algorithmus analysiert.\\
 \\
