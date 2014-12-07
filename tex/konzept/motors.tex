@@ -1,0 +1,74 @@
+\section{Motoren} \label{sec:motors}
+
+\subsection{Schrittmotor}
+
+\subsection{Brushlessmotor}
+
+\subsubsection{Anforderungen}
+Ber Brushlessmotor dient der Schussabgabe und muss daher die folgenden
+zwei Kriterien erfüllen.
+
+\begin{description}
+	\item[Drehzahl]
+		Die Drehzahl dient der Parametrierung der Schussparabel
+		und hat somit direkten Einfluss auf die Genauigkeit der
+		Vorrichtung.
+	\item[Kraft]
+		Die Kraft bestimmt den Einbruch bei Belastung durch die
+		Schussabgabe und die Erholzeit bis zum wiedererreichen
+		der vorgegebenen Drehzahl. Die Kraft hat somit direkten
+		Einfluss auf die Kadenz der Vorrichtung.
+\end{description}
+
+Um einen Brushlessmotor zu evaluieren bedarf es der Definition der oben
+genannten Parameter. Diese werden wiederum direkt beeinflusst vom 
+mechanischen Aufbau. Hierzu gehört primär das Drehrad, welches mit seinem
+Trägheitsmoment den Einbruch und somit die nötige Kraft definiert für das
+Erreichen der gewünschten Kadenz. Weiter ist auch die Über- bzw.
+Untersetzung ein wichtiger Faktor für die Dimensionierung des Motors, da
+dieses direkten Einfluss auf die Drehzahl als auch die Kraft hat.
+
+Durch Fehlen der exakten Daten ist eine finale Evaluation derzeit nicht
+möglich. Für einen groben Überblick und als Referenz für die elektrische
+als auch mechanische Auslegung wird eine formale Analyse durchgeführt.
+
+\subsubsection{Berechnungen}
+Die von den Herstellern angegebenen Motordaten sind für grundlegende
+Berechnungen typischerweise unzureichend, da diese für den Modellbau
+vorgesehen sind. Für eine erste Dimensionierung und Berechnung der
+Motordaten wird das Tool eCalc benutzt, welches ein bekanntes
+Hilfsmittel ist für die Auslegung von Brushlessmotoren im Modellbau
+\cite{ecalc}. Hierfür sind die Modelldaten so auslgelegt, dass der
+gewählte Motor so betrieben ist, dass dieser nahe der erlaubten
+Leistungsgrenze liegt.
+
+\subsubsection*{Hacker A10-12S}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l l l}
+		RC-Parameter & & & \\ \hline
+			& Kühlung	& & Mittelmässig \\
+			& Batterie	& & LiPo 10Ah, voll, 2S1P, 3.7V \\
+			& Regler	& & 10A \\
+			& Propeller	& & $\O=5"$, $p=2"$, $b=2$, $p_c=1.3$, $g_r=1$ \\
+			& & & \\
+		Resultate (max.) & & & \\ \hline
+			& Motorstrom	& $I$	& 6.63 A \\
+			& Motorspannung	& $U$	& 7.73 V \\
+			& Drehzahl	& $n$	& 18292 min$^{-1}$ \\
+			& Leistung 	& $P_e$	& 51.3 W \\
+			&		& $P_m$	& 37.9 W \\
+			& Wikungsgrad	& $\eta$& 73.9 \% \\
+			& Motortemperatur
+					& $T$	& 37 C \\
+			& & & \\
+		Berechnungen & & & \\ \hline
+			& Winkelgeschwindigkeit
+					& $\omega_m$	& 1915.5 s$^{-1}$ \\
+			& Drehmoment	& $M$		& 0.0198 Nm
+	\end{tabular}
+\end{table}
+
+\subsubsection{Auswahl}
+
+\subsection{Gleichstrommotor}
