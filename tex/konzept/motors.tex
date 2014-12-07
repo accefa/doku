@@ -1,0 +1,120 @@
+\section{Motoren} \label{sec:motors}
+
+\subsection{Schrittmotor}
+Der Schrittmotor dient der Ausrichtung der Abschussvorrichtung bzw. der
+Plattform, welche die Abschussvorrichtung trägt. Dieser Motor muss
+daher die folgenden zwei Kriterien erfüllen.
+
+\begin{itemize}
+	\item Genauigkeit -- Der Motor richtet die Schussvorrichtung auf
+		das Zielobjekt und hat somit direkten Einfluss auf die
+		Genauigkeit der Vorrichtung.
+	\item Kraft -- Die Kraft bestimmt die Geschwindigkeit, mit welcher
+		sich die Abschussvorrichtung ausrichten kann.
+\end{itemize}
+
+Um einen Schrittmotor zu evaluieren bedarf es der Definition der oben
+genannten Parameter, also der geforderten Genauigkeit als auch der
+Geschwindigkeit für die Ausrichtung der Vorrichtung. Die hierfür gemachten
+Annahmen und Berechnungen sind im Abschnitt \ref{sec:berechnungen}
+dargelegt. Diese Berechnungen ergeben, dass der Schrittmotor ein Drehmoment
+von $0.25\text{Nm} \leq M$ aufbringen muss.
+
+\subsubsection{Mögliche Motorenmodelle}
+Mit den definierten Motordaten lässt sich aus einer Vielzahl möglicher
+Motoren wählen bei typischen Distributoren wie Conrad Electronics. Die
+Tabelle \ref{tab:stepper-overview} bietet eine Auswahl möglicher
+Schrittmotoren.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l l r}
+		Distributor
+			& Modell
+			& Moment
+			& Preis \\ \hline
+		Conrad
+			& QSH4218-51-10-049
+			& 0.49 Nm
+			& 49.95 CHF \\
+		Conrad
+			& QSH4218-41-10-035
+			& 0.35 Nm
+			& 43.95 CHF \\
+		Conrad
+			& QSH4218-35-10-027
+			& 0.27 Nm
+			& 37.95 CHF
+	\end{tabular}
+	\caption{Übersicht möglicher Modelle von Schrittmotoren}
+	\label{tab:stepper-overview}
+\end{table}
+
+
+\subsection{Brushlessmotor}
+Ber Brushlessmotor dient der Schussabgabe und muss daher die folgenden
+zwei Kriterien erfüllen.
+
+\begin{itemize}
+	\item Drehzahl -- Die Drehzahl dient der Parametrierung der
+		Schussparabel und hat somit direkten Einfluss auf die
+		Genauigkeit der Vorrichtung.
+	\item Kraft -- Die Kraft bestimmt den Einbruch bei Belastung durch
+		die Schussabgabe und die Erholzeit bis zum Wiedererreichen
+		der vorgegebenen Drehzahl. Die Kraft hat somit direkten
+		Einfluss auf die Kadenz der Vorrichtung.
+\end{itemize}
+
+Um einen Brushlessmotor zu evaluieren bedarf es der Definition der oben
+genannten Parameter. Diese werden wiederum direkt beeinflusst vom 
+mechanischen Aufbau. Hierzu gehört primär das Drehrad, welches mit seinem
+Trägheitsmoment den Einbruch und somit die nötige Kraft definiert für das
+Erreichen der gewünschten Kadenz. Weiter ist auch die Über- bzw.
+Untersetzung ein wichtiger Faktor für die Dimensionierung des Motors, da
+diese direkten Einfluss auf die Drehzahl als auch die Kraft hat.
+
+Durch Fehlen der exakten Daten ist eine finale Evaluation derzeit nicht
+möglich. Für einen groben Überblick und als Referenz für die elektrische
+als auch mechanische Auslegung wird eine formale Analyse durchgeführt.
+
+\subsubsection{Berechnungen}
+Die von den Herstellern angegebenen Motordaten sind für grundlegende
+Berechnungen typischerweise unzureichend, da diese für den Modellbau
+vorgesehen sind. Für eine erste Dimensionierung und Berechnung der
+Motordaten wird das Tool eCalc benutzt, welches ein bekanntes
+Hilfsmittel ist für die Auslegung von Brushlessmotoren im Modellbau
+\cite{ecalc}. Hierfür sind die Modelldaten so auslgelegt, dass der
+gewählte Motor so betrieben ist, dass dieser nahe der erlaubten
+Leistungsgrenze liegt. Für sämtliche Berechnungen gilt das selbe
+RC-Modell mit den Standardwerten von eCalc. Individuelle Parameter
+sind in den zugehörigen Tabellen dargelegt.
+
+Aus den Berechnungen von eCalc lassen sich zwei wichtige Parameter
+berechnen, welche so nicht in den Datenblättern dokumentiert sind.
+Diese sind das Drehmoment $M$ und die Winkelgeschwindigkeit $\omega_m$.
+
+\[ \omega_m = \frac{2\pi}{60} n \]
+\[ M = \frac{P_m}{\omega_m} \]
+
+\subsubsection{Simulationen}
+Im Folgenden werden verschiedene die Simulationsdaten und Ergebnisse
+dargelegt auf Basis des eCalc. Die hier untersuchten Motoren sind
+allesamt Standardmodelle bekannter Marken aus dem Modellbau. Diese
+sind bei üblichen Distributoren wie Conrad Electronics erhältlich.
+
+\newpage
+\input{motors/hacker_a10_12s}
+
+\newpage
+\input{motors/hacker_a20_12xl_evo}
+
+\newpage
+\input{motors/hacker_a20_20l}
+
+\newpage
+\input{motors/dualsky_xm3548ea_5}
+
+\newpage
+\subsubsection{Auswahl}
+
+\subsection{Gleichstrommotor}

@@ -4,6 +4,7 @@ DOCUMENT = Team_39_Konzept
 
 doc:
 	pdflatex $(DOCUMENT).tex
+	bibtex $(DOCUMENT).aux
 	for i in {1..5}; do \
 		pdflatex $(DOCUMENT).tex; \
 	done
