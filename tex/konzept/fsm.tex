@@ -2,15 +2,17 @@
 	\centering
 \begin{tikzpicture}[shorten >=2pt,node distance=4cm,on grid,auto]
 	\node[state,initial] 	(q_0) 						{$q_0$};
-	\node[state] 			(q_1) [above right=of q_0]	{$q_1$};
+	\node[state] 			(q_1) [above=of q_0]		{$q_1$};
 	\node[state]			(q_2) [right=of q_1]		{$q_2$};
 	\node[state]			(q_3) [right=of q_2]		{$q_3$};
-	\node[state,accepting]	(q_4) [below right=of q_3]	{$q_4$};
+	\node[state]			(q_4) [right=of q_3]		{$q_4$};
+	\node[state,accepting]	(q_5) [below=of q_4]		{$q_5$};
 	\path[->]
-		(q_0)	edge node	{Korb entdeckt} (q_1)
-		(q_1)	edge node	{\begin{tabular}{c} Plattform \\ ausgerichtet \end{tabular}}	(q_2)
-		(q_2)	edge node	{Drehzahl erreicht}	(q_3)
-		(q_3)	edge node	{Keine Bälle vorhanden}	(q_4);
+		(q_0)	edge node	{\begin{tabular}{c} 5 Minuten \\ vorbei \end{tabular}} (q_1)
+		(q_1)	edge node	{Korb entdeckt}	(q_2)
+		(q_2)	edge node	{\begin{tabular}{c} Plattform \\ ausgerichtet \end{tabular}}	(q_3)
+		(q_3)	edge node	{Drehzahl erreicht}	(q_4)
+		(q_4)	edge node	{\begin{tabular}{c} Keine Bälle \\ vorhanden \end{tabular}}	(q_5);
 \end{tikzpicture}
 	\caption{Autonome Wurfmaschine modelliert als endlicher Automat}
 \end{figure}
