@@ -1,1 +1,50 @@
-TODO Beschreiben der Schnittstelle vom Pi zum Freeboard
+Die UART Schnittstelle dient der Kommunikation zwischen Raspberry Pi und
+dem Freedomboard, welches die LowLevel Funktionalität der Maschine 
+umsetzt. Dieses implementiert sämtliche Ansteuerng von Hardwarekomponenten
+wie Motorentreibern oder Sensoren. Die übergeordnete Instanz des Freedomboards
+ist das Raspberry Pi, welches die Schnittstelle zum Benutzer bildet. Die für
+diese Abstraktion notwendige Schnittstelle wird mittels UART
+implementiert. Ein mögliches Protokoll ist in der Tabelle \ref{tab:uart}
+zusammengefasst.
+
+Die serielle Schnittstelle wird vom Freedomboard direkt implementiert auf
+USB mittels einer USB-Seriell Wandlung. Dies ermöglicht es, das Freedomboard
+direkt per USB-Kabel am Raspberry Pi zu verbinden.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l l l l}
+		Aktion & Message & Parameter & Antwort \\
+		\hline
+		drehen um $\varphi$ 
+			& \verb!rotate!
+			& Winkel $\varphi$
+			& aktuelle Position \\
+		Entfernung $s$ setzen
+			& \verb!distance!
+			& Entfernung $s$
+			& aktuelle Entfernung \\
+		Ausrichtungsmotor enable
+			& \verb!rotater!
+			& enable/disable
+			& aktueller status\\
+		Schussmotor enable
+			& \verb!shooter! 
+			& enable/disable
+			& aktueller Status \\
+		Lademotor enable
+			& \verb!loader!
+			& enable/disable
+			& aktueller status\\
+		Schussabgabe
+			& \verb!fire!
+			& -
+			& ok/nok\\
+		Reset
+			& \verb!reset!
+			& -
+			& -\\
+	\end{tabular}
+	\caption{Protokollentwurf der seriellen Schnittstelle}
+	\label{tab:uart}
+\end{table}

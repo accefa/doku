@@ -1,49 +1,14 @@
-Die LowLevel Funktionalität der Maschine wird mittels des Freedomboards
-umgesetzt. Dieses implementiert sämtliche Ansteuerng von Hardwarekomponenten
-wie Motorentreibern oder Sensoren. Die übergeodnete Instanz des Freedomboards
-ist das Raspberry Pi, welches die Schnittstelle zum Benutzer bildet. Die für
-diese Abstraktion notwendige Schnittstelle wird mittels UART (RS-232)
-implementiert. Das vorgesehene Protokoll ist in der Tabelle \ref{tab:uart}
-zusammengefasst.
+Als LowLevel Schnittstellen werden die einfachen Ansteuerungen
+bezeichnet, welche direkt mittels eines Miktrocontroller erzeugt
+werden.
 
-Die serielle Schnittstelle wird vom Freedomboard direkt implementiert auf
-USB mittels einer USB-Seriell Wandlung. Dies ermöglicht es, das Freedomboard
-direkt per USB-Kabel am Raspberry Pi zu verbinden.
+Die einzelenen Hardwarekomponenten wie Motorentreiber werden mittels
+einfachen digitalen Signalen bedient. Dies können einfache digitale
+Pegel sein, standardisierte Busse wie I$^2$C oder spezielle Signale
+wie PWM. 
 
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{l l l l l}
-		Aktion & Message & Parameter & Antwort \\
-		\hline
-		drehen um $\varphi$ 
-			& \verb!rotate!
-			& Winkel $\varphi$
-			& aktuelle Position \\
-		Entfernung $s$ setzen
-			& \verb!distance!
-			& Entfernung $s$
-			& aktuelle Entfernung \\
-		Ausrichtungsmotor enable
-			& \verb!rotater!
-			& enable/disable
-			& \\
-		Schussmotor enable
-			& \verb!shooter! 
-			& enable/disable
-			& aktueller Status \\
-		Lademotor enable
-			& \verb!loader!
-			& enable/disable
-			& \\
-		Schussabgabe
-			& \verb!fire!
-			& -
-			& \\
-		Reset
-			& \verb!reset!
-			& -
-			& \\
-	\end{tabular}
-	\caption{Protokollentwurf der seriellen Schnittstelle}
-	\label{tab:uart}
-\end{table}
+Da noch nicht alle Hardwarekomponenten definiert sind, gibt es keine
+definitive Aussage über die verwendeten Signale bzw. Busse. Vorzusehen
+sind sicherlich I$^2$C und SPI, da diese weit verbreitet Schnittstellen
+sind, durch das Freedomboard unterstützt werden und deren
+Implementierung relativ einfach ist.
