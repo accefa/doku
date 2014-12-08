@@ -5,12 +5,12 @@ UART Schnittstelle zur Verfügung zum Freedomboard, auf welcher mittels
 einfachen Kommandos die Motoren angesteuert werden. 
 
 Auf dem zweiten Layer befindet sich das Freedomboard, welches die über UART
-eingegebenen Kommandos weiterverarbeitet. Hierfür ist ein Zustandautomat
+eingegebenen Kommandos weiterverarbeitet. Hierfür ist ein Zustandsautomat
 implementiert, welcher die UART Schnittstelle bedient und die Befehle
 verarbeitet.
 
-Die eingespielten Kommandos werden mit diesem Zustandautomat verarbeitet und
-den einzelnen Motorenteibern zugespielt. Diese Treiber, falls vorhanden,
+Die eingespielten Kommandos werden mit diesem Zustandsautomat verarbeitet und
+den einzelnen Motorentreibern zugespielt. Diese Treiber, falls vorhanden,
 bilden den untersten Layer der Ansteuerung. Diese Treiber sind entweder
 direkt durch das Freedomboard gesteuert (z.B. mit PWM-Signalen) oder 
 parametrierbar über standardisierte Schnittstellen wie SPI oder I$^2$C.
