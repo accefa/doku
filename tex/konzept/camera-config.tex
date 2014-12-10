@@ -1,1 +1,40 @@
-TODO REST-Schnittstelle der Camera Config beschreiben
+Über die Schnittstelle Camera Config wird die Kamera angesteuert. Es kann ein Vorschaubild aufgerufen werden und verschiedene Parameter der Kamera verändert werden. Diese Schnittstelle wird ebenfalls vom Webserver auf dem Raspberry Pi angeboten. Ein GET-Request auf die Ressource Camera liefert einen Link zum Vorschaubild und die aktuellen Parameter zurück. Ein Beispiel ist der Tabelle \ref{tab:get-camera-config} zu entnehmen.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline Anfrage an Raspberry Pi 			 & Antwort von Raspberry Pi 	  							\\ 
+		\hline \verb|GET /camera HTTP/1.1| 		 & \verb|200 OK| 				  							\\
+		       \verb|Host: 192.168.1.2| 		 & \verb|Content-Type: text/xml|  							\\
+												 &  							  							\\
+												 & \verb|<camera>| 				  							\\ 
+												 & \verb|<preview>http://192.168.1.2/preview.jpg</preview>| \\
+												 & \verb|<contrast>50</contrast>| 							\\ 
+												 & \verb|</camera>| 			  							\\ 
+		\hline 
+	\end{tabular} 
+	\caption{GET-Request an Camera Config}
+	\label{tab:get-camera-config}
+\end{table}
+
+Möchte man die Parameter der Kamera ändern, schickt man einen PUT-Request an den Raspberry Pi. Dieser Request enthält die neuen Parameter. Der Raspberry Pi nimmt den Request entgegen und speichert die Einstellungen persistent ab. Sind die Parameter ungültig wird ein entsprechender HTTP-Statuscode als Fehlermeldung zurückgeschickt. Tabelle \ref{tab:put-camera-config} zeigt eine solche Änderung der Parameter.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline	Anfrage an Raspberry Pi 			& Antwort von Raspberry Pi	\\ 
+		\hline 	\verb|PUT /camera HTTP/1.1| 		& \verb|200 OK| 			\\
+				\verb|Host: 192.168.1.2| 		 	& 							\\
+				\verb|Content-Type: text/xml|	 	&  							\\
+													&  							\\
+				\verb|<camera>|	 				 	&  							\\
+				\verb|<contrast>50</contrast>|	 	&  							\\
+				\verb|<iso>600</iso>|	 			&  							\\
+				\verb|</camera>|	 				&  							\\ 
+		\hline 
+	\end{tabular} 
+	\caption{PUT-Request an Camera Config}
+	\label{tab:put-camera-config}
+\end{table}
+
+Zusätzliche Funktionen können mit diesem Design einfach implementiert werden.
