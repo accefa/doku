@@ -1,1 +1,15 @@
-TODO REST-Schnittstelle des Stop Signals beschreiben
+Die Schnittstelle Stop Signal wird vom Webserver auf der externen Steuereinheit angeboten. Die Adresse von diesem Webserver ist dem Raspberry Pi, durch das Start Signal, bekannt. Wenn das Programm auf dem Raspberry Pi beendet ist schickt es einen PUT-Request an den Webserver auf der externen Steuereinheit und signalisiert so das Stop Signal. Tabelle \ref{tab:put-stop-signal} zeigt ein Beispiel der Anfrage.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline Anfrage an externe Steuereinheit	 & Antwort von externer Steuereinheit \\ 
+		\hline \verb|PUT /stop-signal HTTP/1.1|  & \verb|200 OK| 					  \\
+			   \verb|Host: 192.168.1.3| 		 & 							          \\
+		\hline 
+	\end{tabular} 
+	\caption{PUT-Request an Stop Signal}
+	\label{tab:put-stop-signal}
+\end{table}
+
+Durch dieses Design muss die externe Steuereinheit nicht permanent nach dem Status des Programms fragen (Polling). Der Webserver auf der externen Steuereinheit verarbeitet den Request und gibt das Stop Signal visuell aus.
