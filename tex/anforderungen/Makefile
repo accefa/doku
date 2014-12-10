@@ -7,6 +7,7 @@ doc:
 	for i in {1..5}; do \
 		pdflatex $(DOCUMENT).tex; \
 	done
+	cp Team_39_Produktanforderungen.pdf ../konzept/anhang/Team_39_Produktanforderungen.pdf
 
 clean:
 	rm *.aux

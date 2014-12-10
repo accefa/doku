@@ -7,6 +7,7 @@ doc:
 	for i in {1..5}; do \
 		pdflatex $(DOCUMENT).tex; \
 	done
+	cp Team_39_Technologierecherche.pdf ../konzept/anhang/Team_39_Technologierecherche.pdf
 
 bib:
 	bibtex $(DOCUMENT).aux
