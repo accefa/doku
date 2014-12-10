@@ -1,15 +1,24 @@
-\label{ss-schnittstelle-raspistill}
-TODO raspistill beschreiben und Verweiss auf Doku im Internet \href{http://www.raspberrypi.org/wp-content/uploads/2013/07/RaspiCam-Documentation.pdf}{Link zu Doku}
+Die Kamera wird über das mitgelieferte Kommandozeilenprogramm \verb|raspistill| angesteuert. Das Programm bietet zahlreiche Einstellungsmöglichkeiten. Eine kleine, für das Projekt relevante Auswahl ist in der Tabelle \ref{tab:raspistill} aufgeführt. Eine ausführliche Dokumentation des Programms kann man unter folgendem Link abrufen: \\
 
+\href{http://www.raspberrypi.org/wp-content/uploads/2013/07/RaspiCam-Documentation.pdf}{http://www.raspberrypi.org/wp-content/uploads/2013/07/RaspiCam-Documentation.pdf} \\
 
-\begin{lstlisting}[language=bash]
-raspistill --nopreview --quality 50 -roi 0.5,0.5,0.25,0.25 --contrast 50 -cfx 128:128 
-\end{lstlisting}
-So sieht einen Aufruf der Raspberry PI Kamera aus. 
-\begin{itemize}
-	\item --nopreview: Optimierung - Kamera macht sonst immer ein Frame und zeigt es direkt an.
-	\item --quality 50: Optimierung - Tests haben gezeigt, dass die Qualität von 50 genügt. Die Bildgrösse wird somit einiges kleiner.
-	\item -roi: Bild zuschneiden
-	\item --contrast: Kontrast erhöhen
-	\item -cfk 128:128: Graustufen setzen
-\end{itemize} 
+\begin{table}[h!]
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|l|p{14cm}|}
+		\hline Option & Beschreibung \\ 
+		\hline \verb|--nopreview| & Deaktiviert die Bildvorschau (Optimierung) \\ 
+		\hline  \verb|--quality 50| & Tests haben gezeigt, dass die Qualität von 50 genügt. Die Bildgrösse wird somit einiges kleiner. \\ 
+		\hline  \verb|--roi| & Bildausschnitt festlegen \\ 
+		\hline  \verb|--contrast| & Kontrast einstellen \\ 
+		\hline  \verb|-cfk 128:128| & Erzeugt ein Bild in Graustufen \\ 
+		\hline 
+	\end{tabular} 
+	\caption{Relevante Einstellungen von raspistill}
+	\label{tab:raspistill}
+\end{table}
+
+Ein Aufruf von \verb|raspistill| könnte wie folgt aussehen: \\
+
+\verb|raspistill --nopreview --quality 50 -roi 0.5,0.5,0.25,0.25 --contrast 50 -cfx 128:128| \\
+
+Das Programm speichert das Bild anschliessend in einer jpg-Datei ab. Für die weitere Verarbeitung des Bildes ist das nicht optimal. Das Bild müsste vom Python-Programm, welches für die Erkennung des Korbes zuständig ist, nochmals eingelesen werden. Deshalb wird \verb|raspistill| direkt aus dem Erkennungs-Programm über ein Python-Interface angesteuert. Dieses Interface wird vom Packet \verb|picamera|\footnote{\href{http://picamera.readthedocs.org/en/release-1.8/index.html}{http://picamera.readthedocs.org/en/release-1.8/index.html}} zur Verfügung gestellt und ermöglicht ein Objekt der Kamera zu erstellen. Das Kamera-Objekt liefert direkt ein Bild als PIL\footnote{Python Image Library}-Objekt zurück. Das PIL-Objekt kann anschliessend für die weitere Verarbeitung in Python genutzt werden.
