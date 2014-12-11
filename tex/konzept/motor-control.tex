@@ -1,7 +1,8 @@
 Die Motoransteuerung findet kaskadiert statt über zwei Abstraktionslayer
-wie in der Abbildung \ref{fig:kontextdiagramm} dargestellt. Die Ansteuerung
-erfolgt zunächst beim Raspberry Pi auf dem obersten Layer. Dieser hat eine
-UART Schnittstelle zur Verfügung zum Freedomboard, auf welcher mittels
+wie in der Abbildung \ref{fig:kontextdiagramm} und 
+\ref{motor-control-overview} dargestellt. Die Ansteuerung erfolgt zunächst
+beim Raspberry Pi auf dem obersten Layer. Dieser hat eine UART
+Schnittstelle zur Verfügung zum Freedomboard, auf welcher mittels
 einfachen Kommandos die Motoren angesteuert werden. 
 %
 Auf dem zweiten Layer befindet sich das Freedomboard, welches die über UART
@@ -19,6 +20,7 @@ parametrierbar über standardisierte Schnittstellen wie SPI oder I$^2$C.
 	\centering
 	\includegraphics[scale=1]{../../fig/motor-control-overview.pdf}
 	\caption{Schnittstellenübersich der Motoransteuerung}
+	\label{fig:motor-control-overview}
 \end{figure}
 
 Die Software auf dem Freedomboard wird in der Programmiersprache C
