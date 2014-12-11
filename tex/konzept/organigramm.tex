@@ -1,0 +1,59 @@
+\subsection{Organigramm}
+Die Hierarchie des Projektteams ist im Organigramm in Abbildung \ref{fig:organigramm} dargestellt.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+	\node [draw](projektleiter) {
+		\begin{tabular}{c}
+		Projektleiter \\
+		Adriano \\
+		Valsangiacomo
+		\end{tabular} 
+	};
+	
+	\node [draw, below left =1cm and 2cm of  projektleiter] (informatik) {Informatik} edge [<-] (projektleiter);
+	\node [draw, below =1cm of  projektleiter] (elektrotechnik) {Elektrotechnik} edge [<-] (projektleiter);
+	\node [draw, below right =1cm and 2cm of  projektleiter] (mechanik) {Mechanik} edge [<-] (projektleiter);
+	
+	\node [draw, below left  = of  informatik] (fabianwuethrich) {
+			\begin{tabular}{c}
+			Fabian \\
+			Wüthrich
+			\end{tabular}
+		} edge [<-] (informatik);
+	\node [draw, below right = of  informatik] (alexsuter) {
+			\begin{tabular}{c}
+			Alexander \\
+			Suter
+			\end{tabular} 
+		} edge [<-] (informatik);
+	
+	\node [draw, below =3cm of  elektrotechnik] (ervinmazlagic) {
+			\begin{tabular}{c}
+			Ervin \\
+			Mazlagi\'c
+			\end{tabular}
+		} edge [<-] (elektrotechnik);
+	
+	\node [draw, below left = of  mechanik] (christianspycher) {
+		\begin{tabular}{c}
+		Christian \\
+		Spycher
+		\end{tabular} 
+		} edge [<-] (mechanik);
+	\node [draw, below = of  mechanik] (christianschuerch) {
+		\begin{tabular}{c}
+		Christian \\
+		Schürch
+		\end{tabular}} edge [<-] (mechanik);
+	\node [draw, below right = of  mechanik] (adrianovalsangiacomo) {
+				\begin{tabular}{c}
+				Adriano \\
+				Valsangiacomo
+				\end{tabular}  
+		  } edge [<-] (mechanik);
+	\end{tikzpicture}
+	\caption{Organigramm}
+	\label{fig:organigramm}
+\end{figure}
