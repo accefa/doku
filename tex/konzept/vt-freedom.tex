@@ -7,4 +7,18 @@ per UART wie im folgenden Programmabschnitt dargestellt.
 \lstinputlisting[firstline=82, lastline=102, title=
 	Main-Routine einer einfachen Kommandoverarbeitung]{coding/main.c}
 
+In einem weiteren Versuch ist mit dem CodeWarrior ein I$^2$C Schnittstelle
+initialisiert und mit einem LogicAnalyzer geprüft worden. Dieser Versuch ist
+in Zusammenarbeit mit dem Elektrotechniker des Teams 31 durchgeführt worden.
+Hierbei ist das Freedomboard als Master und ein Mototrenteiber-PCB von
+Adafruit als Slave einesetzt worden. Das Ergebnis einer Kommunikation ist
+in der Abbildung \ref{fig:frdm-i2c} dargestellt.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.75\textwidth]{../../fig/frdm-i2c}
+	\caption{I$^2$C Kommunikation zwischen Freedomboard und einem
+		I$^2$C PWM Controller (Adafruit Motor Shield)
+		aufgezeichnet mit einem LogicAnalyzer.}
+	\label{fig:frdm-i2c}
+\end{figure}
