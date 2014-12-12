@@ -6,7 +6,7 @@ haben sehr unterschiedliche Anforderungen an die Energieversorgung, welche
 mittels getrennter Speisungen effektiv zu erfüllen sind.
 
 \paragraph{Spannungsversorung digitaler Komponenten}
-Die digitalen Komponenten der Vorrichtung beihnhalten primär das
+Die digitalen Komponenten der Vorrichtung beinhalten primär das
 Raspberry Pi und das Freedomboard. Das Freedomboard ist mittels eines USB
 Kabels an das Raspberry Pi angeschlossen. Somit ist dieses durch den
 USB Port des Raspberry Pi versorgt.
@@ -16,11 +16,11 @@ handelsübliches Steckernetzteil verwendet, welches über den Micro-USB
 Anschluss des Raspberry Pi angeschlossen ist.
 
 \paragraph{Spannungsversorgung der Leistungselektronik}
-Die Spannungsversorgung der Leistungselektronischen Komponenten inklusive
+Die Spannungsversorgung der Leistungselektronik inklusive
 der Motoren kann aktuell noch nicht definiert werden, da dies stark von den
 eingesetzten Motoren abhängt. Hierbei gibt es je nach Motorentyp verschiedene
 Anforderungen an die Quellen. Die Tabelle \ref{tab:power-requirement} zeigt
-realistische Daten für die jeweiligen Motoren welche zum Einsatz kommen.
+realistische Daten für die jeweiligen Motorentypen welche zum Einsatz kommen.
 
 \begin{table}[h!]
 	\centering
@@ -68,4 +68,14 @@ da Batterien eine limitierty Zyklenzahl haben.
 
 Eine finale Evaluation von Batterien ist erst durchzuführen, wenn die
 entsprechenden Lasten definiert sind. Für die vorliegende Anwendung sind
-dies die Motoren.
+dies die Motoren. Als erste Alternative wird ein Servernetzteil verwendet,
+da diese typisch kostenlos verfügbar sind im Elektroschrott und somit ein
+ideales Gerät darstellen für die Entwicklungsphase. Ein solches ist bereits
+organisiert und steht bereit.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.75\textwidth]{../../fig/netzteil.jpg}
+	\caption{HP Server Netzteil, PS-3381-1C1, 12V, 32A}
+	\label{fig:server-power}
+\end{figure}
