@@ -8,10 +8,10 @@ Der Ort des Korbes wird optisch bestimmt. Dazu wird zu Beginn des Prozesses ein 
 \label{abb-algorithmus-zur-ortung-des-korbes}
 Die grössten Herausforderungen stellen die unterschiedlichen Lichtverhältnisse dar. Der Algorithmus muss so robust sein, dass dieser damit umgehen kann. Generell sind mit Scheinwerfer von oben zu rechnen wobei der Korb so einen Schatten erhält. Auch Licht von der Seite durch die Fenster kann die Lichtverhältnisse beeinflussen.\\
 \\
-\textbf{Ablauf des Algorithmus}\\
+\textbf{Ablauf des Algorithmus}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.75]{../../fig/ablauf-algorithmus-orts-erkennung.jpg}
+	\includegraphics[scale=0.75]{../../fig/ablauf-ortung-des-korbes-algorithmus.png}
 	\caption{Ablauf des Algorithmus}
 \end{figure}
 
@@ -28,6 +28,8 @@ Auf die einzelnen Parameter wird in der Beschreibung des Ablaufes eingegangen. G
 \\
 Auf der Abbildung sind die einzelnen Schritte zu erkennen, welche auf das Foto angewendet werden. Nachfolgend werden diese Schritte genauer erläutert:
 \begin{itemize}
+	\item Schritt 0 - Foto schiessen: Mit der Raspberry Pi Kamera wird ein Foto gemacht.
+	
 	\item Schritt 1 - Zuschneiden: Das Bild wird zugeschnitten. Irrelevante Informationen können so bereits eliminiert werden. Ausserdem hat es den positiven Effekt, dass das Bild physisch kleiner wird. Weitere Verarbeitungsschritte müssen so weniger Ressourcen aufwenden. 
 	
 	\item Schritt 2 - Kontrast verstärken: In diesem Schritt wird der Kontrast des Bildes erhöht. Das Histogramm verbreitert sich und helle Punkte werden noch heller und dunkle Punkte noch dunkler. Sprich der schwarze Korb wird noch intensiver erkennbar. 
@@ -36,7 +38,7 @@ Auf der Abbildung sind die einzelnen Schritte zu erkennen, welche auf das Foto a
 	
 	\item Schritt 4 - Pixel analysieren: Es werden mehrere Linie auf dem Bild analysiert. Nun ist auf diesen Linien ein längerer Bereich recht dunkel im Verhältnis zu den anderen Bereichen. Da kann nun angenommen werden, dass dort der Korb ist. Um das Problem mit dem Schatten zu umgehen, wird eine Linie analysiert welche möglichst weit oben im Bild ist, denn die Schatten könnten den Korb unten künstlich verbreitern. Um ein exakteres Resultat zu erhalten und dem Algorithmus mehr Robustheit zu gewähren, werden mehrere Linien analysiert und der Mittelwert aus allen analysierten Linien genommen. So umgeht man die Problematik einer Linie, welche aus irgendeinem Grund überhaupt nicht dem Muster entspricht.
 	
-	\item Schritt 5 - Umwandlung Bild-Koordinaten zu physischem Ort: Sobald der Punkt des Korbes auf dem Bild bekannt ist, kann der physische Ort bestimmt werden. Da die Kamera immer am gleichen Ort ist und der Zuschnitt des Bildes gleich erfolgt, kann eine Mapping-Tabelle dafür verwendet werden. In dieser Tabelle findet man die Zuweisung des Bild-Punktes zu dem physischen Ort. Als Output erzeugt der Algorithmus den Winkel zwischen Korb und Kamera.
+	\item Schritt 5 - Abschuss-Winkel berechnen: Sobald der Punkt des Korbes auf dem Bild bekannt ist, kann der physische Ort bestimmt werden. Da die Kamera immer am gleichen Ort ist und der Zuschnitt des Bildes gleich erfolgt, kann eine Mapping-Tabelle dafür verwendet werden. In dieser Tabelle findet man die Zuweisung des Bild-Punktes zu dem physischen Ort. Als Output erzeugt der Algorithmus den Winkel zwischen Korb und Kamera.
 \end{itemize} 
 Die Raspberry Pi Kamera kann bereits einige Schritte gleich selbst durchführen. Dazu zählen Schritt 1, 2 und 3 (siehe Abschnitt \ref{ss-schnittstelle-raspistill}). Das bedeutet, dass der Algorithmus sich selbst nicht um diese Transformationen kümmern muss. Er muss lediglich diese Parameter der Kamera weiterreichen.\\
 \\
