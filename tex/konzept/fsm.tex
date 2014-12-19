@@ -8,7 +8,7 @@
 	\node[state]			(q_4) [right=of q_3]		{$q_4$};
 	\node[state,accepting]	(q_5) [below=of q_4]		{$q_5$};
 	\path[->]
-		(q_0)	edge node	{\begin{tabular}{c} 5 Minuten \\ vorbei \end{tabular}} (q_1)
+		(q_0)	edge node	{\begin{tabular}{c} Startsignal \end{tabular}} (q_1)
 		(q_1)	edge node	{Korb entdeckt}	(q_2)
 		(q_2)	edge node	{\begin{tabular}{c} Plattform \\ ausgerichtet \end{tabular}}	(q_3)
 		(q_3)	edge node	{Drehzahl erreicht}	(q_4)
