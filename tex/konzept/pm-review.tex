@@ -115,3 +115,53 @@ deutlich ausgeweisen durch die \emph{commits}, \emph{additions} ($++$) und
 \end{figure}
 
 \subsubsection{Massnahmen zur Optimierung}\label{sec:issue-optize}
+Die Analyse des Projektmanagement hinsichtlich der Arbeitspakete zeigt zwei
+wesentliche Erkentnisse auf. Zum einen sammeln sich Arbeiten zu den
+gemeinsamen Projektzeiten an (siehe Abbildung \ref{fig:gh-punchcard}).
+Dies deutet darauf hin, dass abseits der Blockzeiten, also während der
+individuellen Bearbeitungszeit, nicht so intensiv gearbeitet wird oder
+gearbeitet werden kann. Zum andern gibt es eine Diskontinuität von der
+Arbeitsintensität, wobei das obere Extrema kurz vor den Meilensteinen liegt
+(siehe Abbildung \ref{fig:gh-contributions-ov}).
+Dies deutet darauf hin, dass viele Arbeitspakete erst vor den zugehörigen
+Meilensteinen erledigt werden. Aus diesen Beobachtungen lassen sich
+folgende Ziele für eine Optimierung des Projektmanagement formulieren.
+
+\begin{enumerate}
+	\item Die Arbeitspakete sollen kontinuierlicher abgearbeitet werden.
+	\item Die Arbeitspakete sollen vermehrt ausserhalb der gemeinsamen
+		Modulzeiten bearbeitet werden.
+\end{enumerate}
+
+\noindent
+Um diese Ziele zu erreichen, sind entsprechende Massnahmen notwendig.
+Mögliche Massnahmen, welche dann in der Realisierungsphase anzuwenden sind,
+könnten die folgenden sein.
+
+\begin{enumerate}
+	\item Die erstellten Arbeitspakete sollen feiner ausgelegt werden.
+		Dies ermöglicht eine schnellere Abarbeitung und reduziert
+		die Besprechungsdauer bzw. das Review als auch die
+		Nachbearbeitungszeit.
+	\item Zu den offiziellen Meilensteinen sollen vorangehende
+		Meilensteine angelegt werden. Sämtliche Arbeitspakete sollen
+		diesen vorangehenden Meilensteinen zugewiesen werden.
+		Dies verschafft einen zeitlichen Puffer für die Reviews als
+		auch die Nachbearbeitung.
+	\item Bei Unsicherheiten bezüglich eines zugewiesesnen Arbeitspakets
+		soll dieses nicht bis zur nächsten Sitzung aufgeschoben werden,
+		sondern wird einfach einem anderen Teammitglied mit einem
+		entsprechenden Kommentar zugewiesen. Dies rediziert die
+		Latenzen und maximiert die Dynamik der Organisation.
+\end{enumerate}
+
+Die letzte Massnahme verändert die Systematik der Arbeitspaketverwaltung,
+welche somit zu einer Anpassung der Prozessdarstellung fürht, wie in der
+Abbildung \ref{fig:pm-issue-02} dargestellt.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{../../fig/pm/issue_02.pdf}
+	\caption{Verbesserte Arbeitspaketverwaltung zur Dynamikoptimierung}
+	\label{fig:pm-issue-02}
+\end{figure}
