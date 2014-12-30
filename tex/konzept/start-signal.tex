@@ -1,5 +1,5 @@
 \subsubsection{Start Signal}
-Das Start Signal präsentiert sich als eigenständige Ressource und kann über eine eindeutige URI\footnote{Uniform Resource Identifier} angesteuert werden. Der Webserver auf dem Raspberry Pi stellt diese Ressource bereit. Möchte man überprüfen ob bereits ein Startsignal gesendet wurde kann ein GET-Request an den Webserver gesendet werden. Die Anfrage ist in der Tabelle \ref{tab:get-start-signal} beschrieben.
+Das Start Signal präsentiert sich als eigenständige Ressource und kann über eine eindeutige URI\footnote{Uniform Resource Identifier} angesteuert werden. Der Webserver auf dem Raspberry Pi stellt diese Ressource bereit. Soll überprüft werden ob bereits ein Startsignal gesendet wurde, kann ein GET-Request an den Webserver gesendet werden. Die Anfrage ist in der Tabelle \ref{tab:get-start-signal} beschrieben.
 
 \begin{table}[h!]
 	\centering
@@ -15,7 +15,7 @@ Das Start Signal präsentiert sich als eigenständige Ressource und kann über e
 	\label{tab:get-start-signal}
 \end{table}
 
-Möchte man den Ablauf starten reicht ein PUT-Request an die Ressource. Ein Beispiel für so eine Request ist in der Tabelle \ref{tab:put-start-signal} beschrieben.
+Mittels eines PUT-Request an die Ressource kann der Ablauf gestartet werden. Ein Beispiel für so eine Request ist in der Tabelle \ref{tab:put-start-signal} beschrieben.
 
 \begin{table}[h!]
 	\centering
