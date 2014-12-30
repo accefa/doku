@@ -4,18 +4,17 @@ Mit Software wird die Kommunikation zwischen externer Steuerungseinheit und Ball
 \subsubsection{Ortung des Korbes}
 Der Ort des Korbes wird optisch bestimmt. Dazu wird zu Beginn des Prozesses ein Foto mittels der Raspberry Pi Kamera geschossen. Dieses Bild wird anschliessend auf dem Raspberry Pi mittels eines Algorithmus analysiert.\\
 \\
-\textbf{Algorithmus zur Ortung des Korbes}\\
+\textbf{Algorithmus zur Ortung des Korbes:}
 \label{abb-algorithmus-zur-ortung-des-korbes}
-Die grössten Herausforderungen stellen die unterschiedlichen Lichtverhältnisse dar. Der Algorithmus muss so robust sein, dass dieser damit umgehen kann. Generell sind mit Scheinwerfer von oben zu rechnen wobei der Korb so einen Schatten erhält. Auch Licht von der Seite durch die Fenster kann die Lichtverhältnisse beeinflussen.\\
-\\
-\textbf{Ablauf des Algorithmus}
+Die grössten Herausforderungen stellen die unterschiedlichen Lichtverhältnisse dar. Der Algorithmus muss so robust sein, dass dieser damit umgehen kann. Generell sind mit Scheinwerfer von oben zu rechnen wobei der Korb so einen Schatten erhält. Auch Licht von der Seite durch die Fenster kann die Lichtverhältnisse beeinflussen.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.75]{../../fig/ablauf-ortung-des-korbes-algorithmus.png}
 	\caption{Ablauf des Algorithmus}
 \end{figure}
 
-\textbf{Parameter des Algorithmus}\\
+\textbf{Parameter des Algorithmus:}
 Der Algorithmus erwartet nachfolgende Parameter um seine Arbeit erfolgreich zu verrichten. Diese Parameter sind das Ergebnis aus gemachten Tests, welche im Anhang \ref{anhang-versuche-tests} zu finden sind.
 \begin{itemize}
 	\item Qualität. Die höchste Qualität des Bildes wird nicht benötigt. Dies würde nur unnötig den Speicherbedarfs des Bildes erhöhen und somit längere Übertragungs- und Verarbeitungsdauern verursachen. 
@@ -36,13 +35,13 @@ Auf der Abbildung sind die einzelnen Schritte zu erkennen, welche auf das Foto a
 	
 	\item Schritt 3 - Graustufen setzen: Das Bild wird in Graustufen konvertiert. Dies hat zur Folge, dass jedes Pixel im Bild jeweils einen gleich hohen Anteil an rot, blau und grün Werten hält. Tiefe Werte bedeuten, dass der Punkt dunkel ist, hohe Werte entsprechend hell. (RGB(0,0,0) = schwarz, RGB(255,255,255) = weiss).
 	
-	\item Schritt 4 - Pixel analysieren: Es werden mehrere Linie auf dem Bild analysiert. Nun ist auf diesen Linien ein längerer Bereich recht dunkel im Verhältnis zu den anderen Bereichen. Da kann nun angenommen werden, dass dort der Korb ist. Um das Problem mit dem Schatten zu umgehen, wird eine Linie analysiert welche möglichst weit oben im Bild ist, denn die Schatten könnten den Korb unten künstlich verbreitern. Um ein exakteres Resultat zu erhalten und dem Algorithmus mehr Robustheit zu gewähren, werden mehrere Linien analysiert und der Mittelwert aus allen analysierten Linien genommen. So umgeht man die Problematik einer Linie, welche aus irgendeinem Grund überhaupt nicht dem Muster entspricht.
+	\item Schritt 4 - Pixel analysieren: Es werden mehrere Linie auf dem Bild analysiert. Nun ist auf diesen Linien ein längerer Bereich recht dunkel im Verhältnis zu den anderen Bereichen. Da kann nun angenommen werden, dass dort der Korb ist. Um das Problem mit dem Schatten zu umgehen, wird eine Linie analysiert welche möglichst weit oben im Bild ist, denn die Schatten könnten den Korb unten künstlich verbreitern. Um ein exakteres Resultat zu erhalten und dem Algorithmus mehr Robustheit zu gewähren, werden mehrere Linien analysiert und der Mittelwert aus allen analysierten Linien genommen. So umgeht man die Problematik einer Linie, welche aus irgendeinem Grund nicht dem Muster entspricht.
 	
 	\item Schritt 5 - Abschuss-Winkel berechnen: Sobald der Punkt des Korbes auf dem Bild bekannt ist, kann der physische Ort bestimmt werden. Da die Kamera immer am gleichen Ort ist und der Zuschnitt des Bildes gleich erfolgt, kann eine Mapping-Tabelle dafür verwendet werden. In dieser Tabelle findet man die Zuweisung des Bild-Punktes zu dem physischen Ort. Als Output erzeugt der Algorithmus den Winkel zwischen Korb und Kamera.
 \end{itemize} 
 Die Raspberry Pi Kamera kann bereits einige Schritte gleich selbst durchführen. Dazu zählen Schritt 1, 2 und 3 (siehe Abschnitt \ref{subsub:raspistill}). Das bedeutet, dass der Algorithmus sich selbst nicht um diese Transformationen kümmern muss. Er muss lediglich diese Parameter der Kamera weiterreichen.\\
 \\
-Die Schritte 4 und 5 müssen jedoch auf dem Raspberry Pi implementiert werden.
+Die Schritte 4 und 5 müssen jedoch auf dem Raspberry Pi implementiert werden. Wie nachfolgendes Listing beweist, ist das Auslesen von Pixel mittels Python nicht schwierig.
 
 \begin{lstlisting}[language=Python,caption={Pixel aus einem Bild auslesen mit Python},label=lst:image_python]
 from PIL import Image
@@ -52,12 +51,11 @@ pixelarray[10,10] = (0,0,0)
 print (pixelarray[10,10])
 \end{lstlisting}
 
-Auf der Auflistung \ref{lst:image_python} ist zu erkennen, wie man ein Pixel auslesen kann.\\
-\\
+
 Alle Parameter für die einzelnen Schritte des Algorithmus müssen konfigurierbar sein. Beim Einrichten der Ballwurfmaschine dürfen fünf Minuten verwendet werden. In dieser Zeit sollen diese Parameter der Umgebung angepasst werden können (siehe Abschnitt \ref{ss-config-paramater-ortung-orb}).\\
 \\
 \textbf{Implementierung}\\
-Die Implementation erfolgt in Python auf dem Raspberry Pi. Python ist bewährt und bietet viele Bibliotheken. Verwendet wird die Version 2. Version 3 wurde seit langem veröffentlicht, konnte sich jedoch noch nicht endgültig durchsetzen. Viele Bibliotheken wurden noch immer nicht portiert. Zur Verwendung kommt die Bibliothek \verb|Pillow| mit welchem man simple Bildoperationen durchführen kann. Um die Kamera anzusteuern wird die Bibliothek \verb|Picamera|.
+Die Implementation erfolgt in Python auf dem Raspberry Pi. Python ist bewährt und bietet viele Bibliotheken. Verwendet wird die Version 2. Version 3 wurde seit langem veröffentlicht, konnte sich jedoch noch nicht endgültig durchsetzen. Viele Bibliotheken wurden noch immer nicht portiert. Zur Verwendung kommt die Bibliothek \verb|Pillow| mit welchem man simple Bildoperationen durchführen kann. Um die Kamera anzusteuern wird die Bibliothek \verb|Picamera| verwendet.
 
 \subsubsection{Ballwurfmaschine-UI}
 \label{ss-config-paramater-ortung-orb}
