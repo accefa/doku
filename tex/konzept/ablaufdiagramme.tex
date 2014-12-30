@@ -24,6 +24,8 @@ parametriert und schlussendlich der Wurf durchgeführt werden.
 		
 	\item Ortung des Korbs ($q_{1}$) \\ \\
 		  Zur Ortung des Korbs wird ein Foto mit einer eingebauten Kamera gemacht. Dieses Foto wird mittels eines eigenen Algorithmus ausgewertet um den Ort zu bestimmen. Der Korb wird immer entdeckt, was jedoch nicht automatisch bedeutet, dass die richtige Position zurückgegeben wird. Denn statt das System stillzulegen, wenn der Korb nicht detektiert wird, kann man immer noch auf Basis des Zufalls erfolgreich sein.
+
+	\newpage
 		  
 	\item Zustandsübergang von $q_{1}$ zu $q_{2}$ \\ \\
 		  Sobald die Detektierung abgeschlossen ist, wird der einzustellende Winkel der Komponente, welche für die Ausrichtung zuständig ist, übermittelt.
@@ -32,7 +34,7 @@ parametriert und schlussendlich der Wurf durchgeführt werden.
 		  Die Plattform wird anhand der Positionsdaten ausgerichtet.
 		  
 	\item Zustandsübergang von $q_{2}$ zu $q_{3}$ \\ \\
-		  Sobald der Prozess zur Ausrichtung der Plattform vollzogen ist wird in den nächsten Zustand gewechselt.
+		  Sobald der Prozess zur Ausrichtung der Plattform vollzogen ist, wird in den nächsten Zustand gewechselt.
 		  
 	\item Drehzahl erreichen ($q_{3}$) \\ \\
 		 Der Antrieb des Drehrades wird gestartet. Damit immer von den gleichen Anfangsbedingungen ausgegangen werden kann, muss zuerst eine vorher definierte Drehzahl erreicht werden. Es wird die Anlaufverzögerung des Motors abgewartet und gemessen ob die gewünschte Drehzahl erreicht wurde.
@@ -47,7 +49,7 @@ parametriert und schlussendlich der Wurf durchgeführt werden.
 		Sobald der Ballvorschub den vorderen Endpunkt erreicht hat, wurden alle Bälle abgeworfen und es kann in den nächsten Zustand gewechselt werden.
 		  
 	\item Stoppsignal senden ($q_{5}$) \\ \\
-		Die externe Steuerungseinheit, welche das Start-Signal abgegeben hat erhält das Stoppsignal.
+		Die externe Steuerungseinheit, welche das Start-Signal abgegeben hat, erhält das Stoppsignal.
 		  
 	\item Ende \\ \\
 		Mit dem Erhalt des Stoppsignal ist der Prozess abgeschlossen.
