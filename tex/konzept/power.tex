@@ -1,17 +1,15 @@
-% to do
-
 Die elektrische Energieversorgung wird mittels getrennter Speisungen erstellt,
 da sowohl digitale Logik als auch Leistungselektronik vorhanden ist. Diese
 haben sehr unterschiedliche Anforderungen an die Energieversorgung, welche
 mittels getrennter Speisungen effektiv zu erfüllen sind.
 
 \paragraph{Spannungsversorung digitaler Komponenten}
-Die digitalen Komponenten der Vorrichtung beinhalten primär das
+Die digitalen Komponenten der Vorrichtung beinhalten primär den
 Raspberry Pi und das Freedomboard. Das Freedomboard ist mittels eines USB
-Kabels an das Raspberry Pi angeschlossen. Somit ist dieses durch den
+Kabels an den Raspberry Pi angeschlossen. Somit ist dieser durch den
 USB Port des Raspberry Pi versorgt.
 
-Das Raspberry Pi ist jedoch extern gespiesen. Hierzu wird ein
+Der Raspberry Pi ist jedoch extern gespiesen. Hierzu wird ein
 handelsübliches Steckernetzteil verwendet, welches über den Micro-USB
 Anschluss des Raspberry Pi angeschlossen ist.
 
@@ -50,27 +48,27 @@ realistische Daten für die jeweiligen Motorentypen welche zum Einsatz kommen.
 
 Kritisch sind die Anforderungen des Brushlessmotors, welcher hohe Ströme
 fordert. Dies verhindert den Einsatz einfacher Netzteile sondern verlangt
-nach speziellen Lösungen. Quellen welche solch hohen Ströme liefern können,
+nach speziellen Lösungen. Quellen welche solch hohe Ströme liefern können,
 sind typischerweise Batterien, wenn ein kurzzeitiger Einsatz genügt für die
 geplante Anwendung. Dies ist bei der automatischen Ballwurfmaschine der
-Fall. Für Anwendung welche eine längere Betriebszeit verlangen, ist der
-Einsatz von Leistungsstarken Netzteilen notwendig, welche typisch für die
-geplante Anwendung hin entwicklet werden.
+Fall. Für Anwendungen welche eine längere Betriebszeit verlangen, ist der
+Einsatz von leistungsstarken Netzteilen notwendig, welche typisch für die
+geplante Anwendung hin entwickelt werden.
 
 Für den Einsatz von Batterien spricht die hohe Strombelastbarkeit und die
 Gewichtsreduktion, da diese nicht zum Gewicht der Wurfmaschine mitgerechnet
 werden. Ebenso ist das Preis/Leistungsverhältnis besser für
-hohe Ströme im Vergeich zu Netzteilen. Nachteilig ist, dass die Betriebszeit
+hohe Ströme im Vergleich zu Netzteilen. Nachteilig ist, dass die Betriebszeit
 der Wurfmaschine stark limitiert ist. Zudem erfordert der Einsatz von
 Batterien auch entsprechende Ladegeräte, welche die Kostenersparnis von
 Batterien direkt wieder ausgleichen. Hinzu kommt die reduzierte Lebensdauer,
-da Batterien eine limitierty Zyklenzahl haben. 
+da Batterien eine limitierte Zyklenzahl haben. 
 
 Eine finale Evaluation von Batterien ist erst durchzuführen, wenn die
 entsprechenden Lasten definiert sind. Für die vorliegende Anwendung sind
 dies die Motoren. Als erste Alternative wird ein Servernetzteil verwendet,
-da diese typisch kostenlos verfügbar sind im Elektroschrott und somit ein
-ideales Gerät darstellen für die Entwicklungsphase. Ein solches ist bereits
+da diese kostenlos verfügbar sind im Elektroschrott und somit ein
+ideales Gerät darstellen für die Entwicklungsphase. Ein solches Netzteil ist bereits
 organisiert und steht bereit.
 
 \begin{figure}[h!]

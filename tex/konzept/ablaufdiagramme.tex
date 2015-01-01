@@ -13,11 +13,10 @@ parametriert und schlussendlich der Wurf durchgeführt werden.
 \begin{itemize}
 	
 	\item Start \\ \\
-		Gestartet wird nicht mit dem eigentlichen autonomen Prozess, sondern mit der Einrichtung der Maschine und der Kalibrierung.
+		  Gestartet wird nicht mit dem eigentlichen autonomen Prozess, sondern mit der Einrichtung der Maschine und der Kalibrierung.
 	
 	\item Kalibrierung ($q_{0}$) \\ \\
-	    Zu Beginn steht eine 5 minütige Kalibrierung zur Verfügung. In dieser Phase kann die Elektronik auf die Mechanik abgestimmt und allfällige Einstellungen am Bildverarbeitungssystem vorgenommen werden. Nach Ablauf dieser 5 Minuten darf keine Änderung am System mehr
-		vorgenommen werden.
+	      Zu Beginn steht eine 5 minütige Kalibrierung zur Verfügung. In dieser Phase kann die Elektronik auf die Mechanik abgestimmt und allfällige Einstellungen am Bildverarbeitungssystem vorgenommen werden. Nach Ablauf dieser 5 Minuten darf keine Änderung am System mehr vorgenommen werden.
 		
 	\item Zustandsübergang von $q_{0}$ zu $q_{1}$ \\ \\
 		  Der eigentliche Prozess erfolgt nun mittels eines Start-Signales, welches von einer externen Steuerungseinheit drahtlos übermittelt wird.
@@ -37,22 +36,22 @@ parametriert und schlussendlich der Wurf durchgeführt werden.
 		  Sobald der Prozess zur Ausrichtung der Plattform vollzogen ist, wird in den nächsten Zustand gewechselt.
 		  
 	\item Drehzahl erreichen ($q_{3}$) \\ \\
-		 Der Antrieb des Drehrades wird gestartet. Damit immer von den gleichen Anfangsbedingungen ausgegangen werden kann, muss zuerst eine vorher definierte Drehzahl erreicht werden. Es wird die Anlaufverzögerung des Motors abgewartet und gemessen ob die gewünschte Drehzahl erreicht wurde.
+		  Der Antrieb des Drehrades wird gestartet. Damit immer von den gleichen Anfangsbedingungen ausgegangen werden kann, muss zuerst eine vorher definierte Drehzahl erreicht werden. Es wird die Anlaufverzögerung des Motors abgewartet und gemessen ob die gewünschte Drehzahl erreicht wurde.
 	
 	\item Zustandsübergang von $q_{3}$ zu $q_{4}$ \\ \\
-		Sobald die Soll-Drehzahl erreicht wurde, wird in den nächsten Zustand gewechselt. Die Drehzahl wird bis zum Ende des ganzen Abwurfs konstant bleiben. Es wird darauf verzichtet, das Rad nach jedem Wurf zu stoppen und wieder neu zu starten.
+		  Sobald die Soll-Drehzahl erreicht wurde, wird in den nächsten Zustand gewechselt. Die Drehzahl wird bis zum Ende des ganzen Abwurfs konstant bleiben. Es wird darauf verzichtet, das Rad nach jedem Wurf zu stoppen und wieder neu zu starten.
 		  
 	\item Ballvorschub starten ($q_{4}$) \\ \\
-		 Die Ballwurfmaschine ist somit schussbereit. Als nächstes wird der Spindelantrieb des Ballvorschubes gestartet. Der Ballvorschub führt die Bälle an das Drehrad heran und die Bälle werden beschleunigt. 
+		  Die Ballwurfmaschine ist somit schussbereit. Als nächstes wird der Spindelantrieb des Ballvorschubes gestartet. Der Ballvorschub führt die Bälle an das Drehrad heran und die Bälle werden beschleunigt. 
 		  
 	\item Zustandsübergang von $q_{4}$ zu $q_{5}$ \\ \\
-		Sobald der Ballvorschub den vorderen Endpunkt erreicht hat, wurden alle Bälle abgeworfen und es kann in den nächsten Zustand gewechselt werden.
+		  Sobald der Ballvorschub den vorderen Endpunkt erreicht hat, wurden alle Bälle abgeworfen und es kann in den nächsten Zustand gewechselt werden.
 		  
 	\item Stoppsignal senden ($q_{5}$) \\ \\
-		Die externe Steuerungseinheit, welche das Start-Signal abgegeben hat, erhält das Stoppsignal.
+	      Die externe Steuerungseinheit, welche das Start-Signal abgegeben hat, erhält das Stoppsignal.
 		  
 	\item Ende \\ \\
-		Mit dem Erhalt des Stoppsignal ist der Prozess abgeschlossen.
+		  Mit dem Erhalt des Stoppsignal ist der Prozess abgeschlossen.
 		  
 \end{itemize}
 

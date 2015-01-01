@@ -1,15 +1,15 @@
-Die Motoransteuerung findet kaskadiert statt über zwei Abstraktionslayer
-wie in der Abbildung \ref{fig:kontextdiagramm} und 
-\ref{motor-control-overview} dargestellt. Die Ansteuerung erfolgt zunächst
+Die Motoransteuerung findet kaskadiert statt, über zwei Abstraktionslayer
+wie in der Abbildung \ref{fig:motor-control-overview} und 
+\ref{fig:kontextdiagramm} dargestellt. Die Ansteuerung erfolgt zunächst
 beim Raspberry Pi auf dem obersten Layer. Dieser hat eine UART
 Schnittstelle zur Verfügung zum Freedomboard, auf welcher mittels
 einfachen Kommandos die Motoren angesteuert werden. 
-%
+
 Auf dem zweiten Layer befindet sich das Freedomboard, welches die über UART
 eingegebenen Kommandos weiterverarbeitet. Hierfür ist ein Zustandsautomat
 implementiert, welcher die UART Schnittstelle bedient und die Befehle
 verarbeitet.
-%
+
 Die eingespielten Kommandos werden mit diesem Zustandsautomat verarbeitet und
 den einzelnen Motorentreibern zugespielt. Diese Treiber, falls vorhanden,
 bilden den untersten Layer der Ansteuerung. Diese Treiber sind entweder
@@ -19,7 +19,7 @@ parametrierbar über standardisierte Schnittstellen wie SPI oder I$^2$C.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=1]{../../fig/motor-control-overview.pdf}
-	\caption{Schnittstellenübersich der Motoransteuerung}
+	\caption{Schnittstellenübersicht der Motoransteuerung}
 	\label{fig:motor-control-overview}
 \end{figure}
 
@@ -27,4 +27,4 @@ Die Software auf dem Freedomboard wird in der Programmiersprache C
 implementiert. Als Entwicklungshilfe stehen zwei Entwicklungsumgebungen
 des Herstellers Freescale Semicondutor zur Verfügung, einerseits CodeWarrior
 und andererseits KinetisDesignStudio. Beide Entwicklungsumgebungen sind
-an der Hochschule Luzern in Gebauch und verfügbar für die Benutzung.
+an der Hochschule Luzern in Gebrauch und verfügbar für die Benutzung.
