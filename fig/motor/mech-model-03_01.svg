@@ -15,7 +15,7 @@
    inkscape:version="0.48.5 r10040"
    width="2560"
    height="1920"
-   sodipodi:docname="mech-model-03.pdf">
+   sodipodi:docname="mech-model-03_01.pdf">
   <metadata
      id="metadata3061">
     <rdf:RDF>
@@ -124,6 +124,20 @@
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          transform="matrix(-0.4,0,0,-0.4,-4,0)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-5"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3899-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -139,7 +153,7 @@
      id="namedview3057"
      showgrid="false"
      inkscape:zoom="0.496875"
-     inkscape:cx="1103.5559"
+     inkscape:cx="1546.7896"
      inkscape:cy="1007.1372"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -10031,6 +10045,31 @@ Tkt1wCGzgjPrUkkYZgAeR39acgZeAe3PFZ2A/9k=
      style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
      d="m 1065.1348,468.32984 146.9183,146.91813"
      id="path3884-6-1-6"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <rect
+     style="fill:#000000;fill-opacity:0.49803922;stroke:none"
+     id="rect4429-6"
+     width="595.72327"
+     height="118.74214"
+     x="1701.6353"
+     y="1385.6604" />
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+     x="1726.0188"
+     y="1471.5564"
+     id="text3880-2"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3882-8"
+       x="1726.0188"
+       y="1471.5564"
+       style="font-size:72px;font-weight:bold;fill:#ffffff;-inkscape-font-specification:Sans Bold">Motorenwelle</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+     d="M 2137.1795,1378.6441 1998.3116,1032.4806"
+     id="path3884-3"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cc" />
 </svg>
