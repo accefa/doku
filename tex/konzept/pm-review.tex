@@ -1,0 +1,169 @@
+\subsection{Realisierung und Auswertung des Projektmanagement}
+Wie im vorhergehenden Abschnitt erläutert, basiert das gesamte
+Projektmanagement auf der aktiven Teilnahme aller Teammitglieder.
+Die Systematik dieses Prozesses ist im Abschnitt 
+\ref{sec:issue-management} erläutert. Dieser wird rückblickend
+analysiert im Abschnitt \ref{sec:issue-analysis} mittels der Daten,
+welche durch Git und GitHub zur Verfügung gestellt werden.
+Anschliessend auf die Analyse ist ein Fazit welches Massnahmen zur
+Optimierung des Arbeitspaketmanagements formuliert für die
+Realisierungsphase des Projekts (PREN2).
+
+\subsubsection{Arbeitspaketverwaltung}
+\label{sec:issue-management}
+Die für den jeweiligen Meilenstein notwendigen Arbeitspakete werden im
+Plenum definiert und als \emph{Issues} formuliert auf dem entsprechenden
+\emph{Repository}. Im Anschluss wird zusammen bewertet und definiert,
+welches Teammitglied die jeweilige Aufgabe optimal erfüllen kann.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{../../fig/pm/issue_01.pdf}
+	\caption{Strategie der Arbeitspaketverwaltung}
+	\label{fig:pm-issue-01}
+\end{figure}
+
+Nach der Formulierung und Zuteilung der Arbeitspakete wird anschliessend
+nochmals kontrolliert, welches Teammitglied welche Aufgaben zugeteilt
+bekommen hat. Hierfür bietet das Webinterface von GitHub eine
+Filterfunktion an, mit welcher sich offene Arbeitspakete nach Benutzer
+(\emph{assignee}) filtern lassen. Diese werden nochmals betrachtet und
+es wird im Plenum entschieden, ob die jeweiligen Zuteilungen optimal
+ausgelegt sind. So wird beispielsweise festgestellt, dass einem
+Teammitglied zu viele Aufgaben zugeteilt sind. Wird dies bereits zu
+diesem Zeitpunkt deutlich, so können einzelne Aufgaben um geteilt werden
+damit eine unausgeglichene Belastung der Teammitglieder zu verhindern.
+
+Die erstellten und zugeteilten Arbeitspakete werden individuell
+abgearbeitet und können als erledigt (\emph{closed}) markiert werden.
+Der relative Stand des zugehörigen Meilensteins wird prozentual
+berechnet aufgrund des Verhältnisses von offenen und erledigten
+Arbeitspaketen. Dies ist insbesondere für den Projektleiter ein
+Indikator für den Projektfortschritt.
+
+\subsubsection{Analyse}
+\label{sec:issue-analysis}
+Die Auswertung der Arbeitspaketverwaltung basiert auf den Daten, welche
+durch die \emph{Commits} numerisch analysierbar und von GitHub zur
+Verfügung gestellt sind. Für diese Auswertung gilt die Annahme, dass
+alle Commits jeweils gleich gewichtet sind. Aus den zur Verfügung
+stehenden Daten lassen sich drei Kriterien beurteilen:
+
+\begin{itemize}
+	\item Arbeitszeiten \hfill{} (\textit{wann wird gearbeitet})
+	\item Kontinuität \hfill{} (\textit{wie kontinuierlich wird gearbeitet})
+	\item Aufteilung \hfill{} (\textit{wie ist die Arbeitsaufteilung})
+\end{itemize}
+
+Die Arbeitszeiten werden mittels der \emph{punch card} bewertet, welche
+in der Abbildung \ref{fig:gh-punchcard} dargestellt ist. Diese gibt die
+relative Anzahl der \emph{commits} zum Wochentag und Tageszeit wieder.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.85\textwidth]{../../fig/pm/gh-punchcard_marked.pdf}
+	\caption{Punch card des ``doku'' Repository von ``accefa''
+		(rot markiert die Blockzeiten des Moduls).}
+	\label{fig:gh-punchcard}
+\end{figure}
+
+Diese zeigt deutlich, dass zu den vorgegebenen Blockzeiten des Moduls
+die meisten \emph{commits} erfolgen. Diese Auffälligkeit hat verschiedene
+Gründe. Zum einen ist die Arbeit mit den beschriebenen Tools für die
+Mehrheit des Teams neu und ungewohnt. Dies erfordert des öfteren das
+gemeinsame angehen gewisser Tasks, welche anschliessend in der Regel zu
+einem \emph{commit} führen. Ein weiterer Grund, welcher zu dieser
+Ansammlung von \emph{commits} führt, ist, dass die Bearbeitung der
+zugeteilten \emph{issues} im Plenum besprochen und korrigiert wurde.
+
+Die Auswertung der Kontinuität erfolgt mit dem Graphen der summierten
+\emph{contributions} für den jeweiligen Tag über das gesamte
+\emph{repository}. Dieser Graph ist in der Abbildung 
+\ref{fig:gh-contributions-ov} dargestellt.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{../../fig/pm/gh-contributions-ov_marked.pdf}
+	\caption{\emph{Contributions}-Verlauf des ``doku'' Repository
+		von ``accefa'' (rot markiert die Meilensteine).}
+	\label{fig:gh-contributions-ov}
+\end{figure}
+
+Dieser Graph zeigt eine markante Welligkeit auf, wobei die lokalen Extrema
+kurz vor den Terminen der Meilensteine liegen. Dies deutet darauf hin, dass
+die Arbeitsplanung gut organisiert ist und die Arbeitspakete deutlich vor
+dem jeweiligen Meilenstein erledigt sind. Die Amplituden der Wellen
+scheinen mit jedem Meilenstein zuzunehmen in einem linearen Zusammenhang,
+während die Änderungsrate innerhalb einer Bearbeitungsperiode deutlich zunimmt.
+Diese Beobachtung ist plausibel, da die Änderungsrate mit der Zunahme der
+Dokumentation wächst.
+
+Die Beobachtungen aus dem \emph{contributions}-Graphen für das
+\emph{Repository} sind in gleicher Weise bei allen Teammitglieder zu erkennen,
+wie in der Abbildung \ref{fig:gh-contributions-team} dargestellt. Die einzelnen
+Grpahen unterscheiden sich in der jeweiligen Ausprägung der Extremalstellen,
+teilen aber die Periodizität des allgemeinen Graphen. Dies ist gegeben durch
+die relative Darstellung der Graphen, welche für jeden Benutzer einzeln
+ausgewertet werden und somit keine absolute Aussage zulassen. Dies ist auch
+deutlich ausgewiesen durch die \emph{commits}, \emph{additions} ($++$) und
+\emph{deletions} ($--$).
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{../../fig/pm/gh-contributions-team.png}
+	\caption{\emph{Contributions}-Graphen der einzelnen Teammitglieder
+		von \lstinline{accefa/doku}}
+	\label{fig:gh-contributions-team}
+\end{figure}
+
+\subsubsection{Massnahmen zur Optimierung}\label{sec:issue-optize}
+Die Analyse des Projektmanagement hinsichtlich der Arbeitspakete zeigt zwei
+wesentliche Erkenntnisse auf. Zum einen sammeln sich Arbeiten zu den
+gemeinsamen Projektzeiten an (siehe Abbildung \ref{fig:gh-punchcard}).
+Dies deutet darauf hin, dass abseits der Blockzeiten, also während der
+individuellen Bearbeitungszeit, nicht so intensiv gearbeitet wird oder
+gearbeitet werden kann. Zum andern gibt es eine Diskontinuität von der
+Arbeitsintensität, wobei das obere Extrema kurz vor den Meilensteinen liegt
+(siehe Abbildung \ref{fig:gh-contributions-ov}).
+Dies deutet darauf hin, dass viele Arbeitspakete erst vor den zugehörigen
+Meilensteinen erledigt werden. Aus diesen Beobachtungen lassen sich
+folgende Ziele für eine Optimierung des Projektmanagement formulieren.
+
+\begin{enumerate}
+	\item Die Arbeitspakete sollen kontinuierlicher abgearbeitet werden.
+	\item Die Arbeitspakete sollen vermehrt ausserhalb der gemeinsamen
+		Modulzeiten bearbeitet werden.
+\end{enumerate}
+
+\noindent
+Um diese Ziele zu erreichen, sind entsprechende Massnahmen notwendig.
+Mögliche Massnahmen, welche dann in der Realisierungsphase anzuwenden sind,
+könnten die folgenden sein.
+
+\begin{enumerate}
+	\item Die erstellten Arbeitspakete sollen feiner ausgelegt werden.
+		Dies ermöglicht eine schnellere Abarbeitung und reduziert
+		die Besprechungsdauer bzw. das Review als auch die
+		Nachbearbeitungszeit.
+	\item Zu den offiziellen Meilensteinen sollen vorangehende
+		Meilensteine angelegt werden. Sämtliche Arbeitspakete sollen
+		diesen vorangehenden Meilensteinen zugewiesen werden.
+		Dies verschafft einen zeitlichen Puffer für die Reviews als
+		auch die Nachbearbeitung.
+	\item Bei Unsicherheiten bezüglich eines zugewiesenen Arbeitspakets
+		soll dieses nicht bis zur nächsten Sitzung aufgeschoben werden,
+		sondern wird einfach einem anderen Teammitglied mit einem
+		entsprechenden Kommentar zugewiesen. Dies reduziert die
+		Latenzen und maximiert die Dynamik der Organisation.
+\end{enumerate}
+
+Die letzte Massnahme verändert die Systematik der Arbeitspaketverwaltung,
+welche somit zu einer Anpassung der Prozessdarstellung führt, wie in der
+Abbildung \ref{fig:pm-issue-02} dargestellt.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{../../fig/pm/issue_02.pdf}
+	\caption{Verbesserte Arbeitspaketverwaltung zur Dynamikoptimierung}
+	\label{fig:pm-issue-02}
+\end{figure}

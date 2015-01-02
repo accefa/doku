@@ -1,14 +1,16 @@
-Die externe Steuerungseinheit (bzw. das Bedienelement) dient dazu um den ganzen Prozess mittels eines Start-Signals zu starten. Zum Ende des Prozesses erhält es das Stopp-Signal. Diese Kommunikationspfade müssen gemäss Anforderungen drahtlos erfolgen. \\
-Ein weiterer wichtiger Punkt ist die Kalibrierung der Funktion "Ortung des Korbes". In der Umsetzung wird eine Benutzeroberfläche erstellt, welche auf der externen Steuerungseinheit betrieben wird (siehe UI-Skizze in Abschnitt \ref{ss-config-paramater-ortung-orb}).\\
+Die externe Steuerungseinheit (bzw. das Bedienelement) dient dazu um den ganzen Prozess mittels eines Start-Signals zu starten. Zum Ende des Prozesses erhält die externe Steuerungseinheit das Stopp-Signal. Diese Kommunikationspfade müssen gemäss Anforderungen drahtlos erfolgen.
+
+Ein weiterer wichtiger Punkt ist die Kalibrierung der Funktion 'Ortung des Korbes'. In der Umsetzung wird eine Benutzeroberfläche erstellt, welche auf der externen Steuerungseinheit betrieben wird (siehe UI-Skizze in Abschnitt \ref{ss-config-paramater-ortung-orb}).
+
 Ein Notebook kann all diese Anforderungen problemlos umsetzen. Heutzutage ist das auch auf einem Smartphone oder Tablet kein Problem mehr. Es wird jedoch das Notebook aus folgenden Gründen bevorzugt:
 
 \begin{itemize}
-	\item Plattformunabhängigkeit: Die Implementation für das Notebook erfolgt in Java. Für jedes gängige Betriebssystem gibt eines JVM (Java Virtual Machine).
+	\item Plattformunabhängigkeit: Die Implementation für das Notebook erfolgt in Java. Für jedes gängige Betriebssystem gibt eine JVM (Java Virtual Machine).
 	\item Know-How: In der Java-Entwicklung ist ein breites Know-How innerhalb des Teams vorhanden.
 	\item Bewährt: Java ist eine der meist genutzten Programmiersprachen und hat sich bewährt.
 \end{itemize}
 
-Es wird eine Rich-Client Implementation gewählt, weil dann sofort eine Plattform zur Verfügung steht, falls ressourcenintensive Berechnungen während des Prozess durchgeführt werden müssen. Gemäss Tests und Versuchen sollte dies jedoch nicht der Fall ein.
+Es wird eine Rich-Client Implementation gewählt. Dadurch steht sofort eine Plattform zur Verfügung, falls ressourcenintensive Berechnungen während des Prozess durchgeführt werden müssen. Gemäss Tests und Versuchen sollte dies jedoch nicht der Fall ein.
 
 
 

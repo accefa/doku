@@ -19,7 +19,7 @@
 	\label{tab:get-camera-config}
 \end{table}
 
-Möchte man die Parameter der Kamera ändern, schickt man einen PUT-Request an den Raspberry Pi. Dieser Request enthält die neuen Parameter. Der Raspberry Pi nimmt den Request entgegen und speichert die Einstellungen persistent ab. Sind die Parameter ungültig wird ein entsprechender HTTP-Statuscode als Fehlermeldung zurückgeschickt. Tabelle \ref{tab:put-camera-config} zeigt eine solche Änderung der Parameter.
+Sollen die Parameter der Kamera geändert werden, wird ein PUT-Request an den Raspberry Pi geschickt. Dieser Request enthält die neuen Parameter. Der Raspberry Pi nimmt den Request entgegen und speichert die Einstellungen persistent ab. Sind die Parameter ungültig wird ein entsprechender HTTP-Statuscode als Fehlermeldung zurückgeschickt. Tabelle \ref{tab:put-camera-config} zeigt eine solche Änderung der Parameter.
 
 \begin{table}[h!]
 	\centering
@@ -39,4 +39,4 @@ Möchte man die Parameter der Kamera ändern, schickt man einen PUT-Request an d
 	\label{tab:put-camera-config}
 \end{table}
 
-Zusätzliche Funktionen können mit diesem Design einfach implementiert werden.
+Zusätzliche Parameter können mit diesem Design einfach implementiert werden.
