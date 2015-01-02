@@ -118,10 +118,52 @@ sind bei üblichen Distributoren wie Conrad Electronics erhältlich.
 \subsection{Gleichstrommotor}
 Der Gleichstrommotor dient dem Ballvorschub, somit muss dieser Motor
 eine gewisse Geschwindigkeit haben und eine bestimmte Kraft um die
-Wurfobjekte zu bewegen.
+Wurfobjekte zu bewegen. Um einen passenden Gleichstrommotor zu evaluieren
+bedarf es der relevanten mechanischen Daten, wie etwa dem Drehmoment und
+der Winkelgeschwindigkeit. Diese Daten sind im Abschnitt
+\ref{sec:berechnungen} dargelegt mit den getroffenen Annahmen für die
+Berechnungen.
 
-Um einen passenden Gleichstrommotor zu evaluieren bedarf es der relevanten
-mechanischen Daten, wie etwa dem Drehmoment und der Winkelgeschwindigkeit.
+Die Resultate dieser Berechnungen deuten auf einen relativ grossen Motor
+hin mit der Annahme, dass dieser ein per Permanentmagnet fremderregter
+Gleichstrommotor ist. Gross heisst in diesem Kontext, dass es kein
+typischer und kostengünstiger Motor aus dem Modellbau oder Hobbybereich
+ist. In einer ersten Phase gilt es die theoretischen Resultate empirisch zu
+überprüfen und dann gegebenenfalls einen Paradigmenwechsel bei der
+Motortypwahl einzuleiten. Hierfür steht ein funktionsfähiges
+Referenzmodell bereit welches in der Abbildung \ref{fig:refmodel}
+dargestellt ist. Dieses kann für die Kraft- und Geschwindigkeitsmessung
+verwendet werden kann. Dieses besitzt auch einen Drehzahlgeber auf basis
+magnetischer Schalter (Hall-Effekt-Schalter) wie diese auch von PREN-ET Team
+vorgesehen sind \cite{pren-et-doc}.
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{../../fig/motor/mech-model-03_01.pdf}
+		\caption{Untersetzungsgetriebe}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{../../fig/motor/mech-model-02.jpg}
+		\caption{Gewindestange mit Gleiter}
+	\end{subfigure}
+
+	\begin{comment}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{../../fig/motor/mech-model-}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{../../fig/motor/mech-model-05.jpg}
+		\caption{Funktionstest mit Labornetzteilen}
+	\end{subfigure}
+	\end{comment}
+	\caption{Funktionsfähiges Referenzmodell für den Ballvorschub}
+	\label{fig:refmodel}
+\end{figure}
 
 \subsection{Motorentreiber}
 Die für die Ansteuerung der Motoren notwendigen Treiber werden innerhalb
