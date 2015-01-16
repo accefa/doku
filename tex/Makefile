@@ -2,12 +2,11 @@ REQUIREMENTPATH = ./anforderungen
 RESEARCHPATH = ./recherche
 SOLUTIONCONCEPTPATH = ./loesungskonzept
 CONCEPTPATH = ./konzept
+PRESENTATION = ./presentation
 
+.PHONY: all requirement research solutionconcept concept presentation
 
-
-.PHONY: all requirement research solutionconcept concept
-
-all: requirement research solutionconcept concept
+all: requirement research solutionconcept concept presentation
 
 requirement:
 	cd $(REQUIREMENTPATH)/;	make doc;
@@ -20,3 +19,6 @@ solutionconcept:
 
 concept:
 	cd $(CONCEPTPATH)/; make doc;
+
+presentation:
+	cd $(PRESENTATION)/; make pres;
