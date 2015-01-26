@@ -7,6 +7,8 @@
 *.lof
 *.out
 *.synctex.gz
+*.nav
+*.snm
 
 # latex pdf output
 tex/*/Team_39_*.pdf
