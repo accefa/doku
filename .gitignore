@@ -14,4 +14,10 @@ tex/*/Team_39_*.pdf
 # temporary files
 *.swp
 
-# Microsoft Crap
+# Microsoft Crap 
+# C:\ ???
+
+# Videos
+vid/
+*.avi
+*.mp4

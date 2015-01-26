@@ -1,0 +1,15 @@
+gource -i 1 -s 0.5 --key 
+  --date-format "%d-%m-20%" 
+  --background 000000 
+  --file-idle-time 0 
+  --title accefa-doku 
+  --hide-filenames
+  --hide-dirnames 
+  -1024x768 -o - | ffmpeg 
+  -y -r 60 -f image2pipe 
+  -vcodec ppm -i - 
+  -vcodec libx264 
+  -preset ultrafast 
+  -pix_fmt yuv420p -crf 1 
+  -threads 0 
+  -bf 0 gource-dark.mp4
