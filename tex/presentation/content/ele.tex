@@ -27,14 +27,14 @@
 				\node (mot1) [power, right of=dc] {MOT};
 				\node (mot2) [power, right of=bldc] {MOT};
 				\node (mot3) [power, right of=stp] {MOT};
-				\node (frdm) [logic, left of=dc] {FRDM};
+				\node (frdm) [logic, left of=pwr] {FRDM};
 				\draw[red,thick] (pwr) -| (mot1);
 				\draw[red, thick] (mot1) -- (mot2);
 				\draw[red, thick] (mot2) -- (mot3);
 				\draw[red, thick] (pwr) -- (dc);
 				\draw[red, thick] (dc) -- (bldc);
 				\draw[red, thick] (bldc) -- (stp);
-				\draw[blue, thick, <->] (frdm) -- (dc);
+				\draw[blue, thick, <->] (frdm) |- (dc);
 				\draw[blue, thick, <->] (frdm) |- (bldc);
 				\draw[blue, thick, <->] (frdm) |- (stp);
 				\draw[green, thick, ->] (dc) -- (mot1);
@@ -107,16 +107,69 @@
 \begin{frame}
 	\frametitle{Motoren\hfill{}\footnotesize \group}
 	\framesubtitle{Schrittmotor (Stepper) für Turmausrichtung}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\begin{tikzpicture}[node distance=1.5cm]
+					\footnotesize
+					\node (frdm) [logic] {FRDM};
+					\node (l6480) [driver, below of=frdm] {L6480};
+					\node (stp) [power, below of=l6480] {STP};
+					\draw[blue, thick, <->] (frdm) -- node[anchor=east] {UART} ($ (frdm) + (0,1) $);
+					\draw[blue, thick, <->] (frdm) -- node[anchor=east] {SPI} (l6480);
+					\draw[green, thick, ->] (l6480) -- (stp);
+				\end{tikzpicture}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Motoren\hfill{}\footnotesize \group}
 	\framesubtitle{Synchronmotor (BLDC) für Ballwurf}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\begin{tikzpicture}[node distance=1.5cm]
+					\footnotesize
+					\node (frdm) [logic] {FRDM};
+					\node (drv) [driver, below of=frdm] {DRV};
+					\node (bldc) [power, below of=drv] {BLDC};
+					\draw[blue, thick, <->] (frdm) -- node[anchor=east] {UART} ($ (frdm) + (0,1) $);
+					\draw[blue, thick, <->] (frdm) -- node[anchor=east] {SPI} (l6480);
+					\draw[green, thick, ->] (drv) -- (bldc);
+				\end{tikzpicture}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+		\end{column}
+	\end{columns}
+
 \end{frame}
 
 \begin{frame}
 	\frametitle{Motoren\hfill{}\footnotesize \group}
 	\framesubtitle{Gleichstrommotor (DC) für Ballnachführung}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\begin{tikzpicture}[node distance=1.5cm]
+					\footnotesize
+					\node (frdm) [logic] {FRDM};
+					\node (a3941) [driver, below of=frdm] {A3941};
+					\node (dc) [power, below of=a3941] {DC};
+					\draw[blue, thick, <->] (frdm) -- node[anchor=east] {UART} ($ (frdm) + (0,1) $);
+					\draw[blue, thick, <->] (frdm) -- node[anchor=east] {PWM} (a3941);
+					\draw[green, thick, ->] (a3941) -- (dc);
+				\end{tikzpicture}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+		\end{column}
+	\end{columns}
+
 \end{frame}
 
 \subsubsection{Mikrocontroller}
