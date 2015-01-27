@@ -354,13 +354,13 @@
 					\node (y) [driver, below of=frdm] {Y};
 					\node (x) [driver, left of=y] {X};
 					\node (z) [driver, right of=y] {Z};
-					\draw[blue, thick, <->] (linux) |- node[anchor=north] {/dev/tty*} (usb);
+					\draw[blue, thick, <->] (linux) |- node[anchor=east, very near start] {tty*} (usb);
 					\draw[blue, thick, <->] (windows) -- node[anchor=east] {COM} (usb);
-					\draw[blue, thick, <->] (mac) |- node[anchor=north] {/dev/cu.*} (usb);
-					\draw[blue, thick, <->] (usb) -- (frdm);
+					\draw[blue, thick, <->] (mac) |- node[anchor=east, very near start] {cu.*} (usb);
+					\draw[blue, thick, <->] (usb) -- node[anchor=west] {USB $\leftrightarrow$ Serial} (frdm);
 					\draw[blue, thick, <->] (frdm) -| node[anchor=east, very near end] {SPI} (x);
-					\draw[blue, thick, <->] (frdm) -- node [anchor=east] {I$^2$C} (y);
-					\draw[blue, thick, <->] (frdm) -| node[anchor=west, very near end] {UART} (z);
+					\draw[blue, thick, <->] (frdm) -- node[anchor=east] {I$^2$C} (y);
+					\draw[blue, thick, <->] (frdm) -| node[anchor=east, very near end] {UART} (z);
 				\end{tikzpicture}
 			\end{figure}
 		\end{column}
