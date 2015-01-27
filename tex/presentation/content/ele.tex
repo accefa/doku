@@ -337,3 +337,48 @@
 		\end{column}
 	\end{columns}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Mikrocontroller\hfill{}\footnotesize \group}
+	\framesubtitle{Freedomboard FRDM-KL25Z}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\begin{tikzpicture}[node distance=1.5cm]
+					\footnotesize
+					\node (linux) [logic] {Linux};
+					\node (windows) [logic, right of=linux] {Windows};
+					\node (mac) [logic, right of=windows] {MAC};
+					\node (usb) [logic, below of=windows] {USB};
+					\node (frdm) [logic, below of=usb] {FRDM};
+					\node (y) [driver, below of=frdm] {Y};
+					\node (x) [driver, left of=y] {X};
+					\node (z) [driver, right of=y] {Z};
+					\draw[blue, thick, <->] (linux) |- node[anchor=north] {/dev/tty*} (usb);
+					\draw[blue, thick, <->] (windows) -- node[anchor=east] {COM} (usb);
+					\draw[blue, thick, <->] (mac) |- node[anchor=north] {/dev/cu.*} (usb);
+					\draw[blue, thick, <->] (usb) -- (frdm);
+					\draw[blue, thick, <->] (frdm) -| node[anchor=east, very near end] {SPI} (x);
+					\draw[blue, thick, <->] (frdm) -- node [anchor=east] {I$^2$C} (y);
+					\draw[blue, thick, <->] (frdm) -| node[anchor=west, very near end] {UART} (z);
+				\end{tikzpicture}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{Wieso Raspberry Pi \& FRDM?}
+				\begin{itemize}
+					\item Plattformunabhängigkeit
+					\item unabhängige, parallele Entwicklung
+						\begin{itemize}
+							\item INF $\leftrightarrow$ Raspberry Pi
+							\item ET $\leftrightarrow$ FRDM
+						\end{itemize}
+					\item Abstraktion
+					\item Modularität
+					\item reduzierte Komplexität
+					\item Codebasis pren-et
+				\end{itemize}
+			\end{block}
+		\end{column}
+	\end{columns}
+\end{frame}
