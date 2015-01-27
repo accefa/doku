@@ -40,7 +40,7 @@
 					\item GitHub
 					\item Issues
 					\item Milestones
-					\item Comments
+					\item Comments, \dots
 				\end{itemize}
 			\end{exampleblock}
 		\end{column}
@@ -64,13 +64,13 @@
 			\draw[blue, thick, ->] (m) -- (i);
 			\draw[blue, thick, ->] (i) -- (a);
 			\draw[blue, thick, ->] (a) -| (ov);
-			\draw[blue, thick, ->] (ov) -| node[anchor=south, very near start] {Y} (a);
-			\draw[blue, thick, ->] (ov) -- node[anchor=south, very near start] {N} (si);
+			\draw[blue, thick, ->] (ov) -| node[anchor=south, near start] {yes} (a);
+			\draw[blue, thick, ->] (ov) -- node[anchor=south, near start] {no} (si);
 			\draw[blue, thick, ->] (si) -- (is);
-			\draw[blue, thick, ->] (is) -- node[anchor=south, very near start] {Y} (ci);
-			\draw[blue, thick, ->] (is) -| node[anchor=south, very near start] {N} (np);
-			\draw[blue, thick, ->] (np) -| node[anchor=south, very near start] {N} (a);
-			\draw[blue, thick, ->] (np) -- node[anchor=west, very near start] {Y} (i);
+			\draw[blue, thick, ->] (is) -- node[anchor=south, near start] {yes} (ci);
+			\draw[blue, thick, ->] (is) -| node[anchor=south, near start] {no} (np);
+			\draw[blue, thick, ->] (np) -| node[anchor=south, near start] {no} (a);
+			\draw[blue, thick, ->] (np) -- node[anchor=west, near start] {yes} (i);
 		\end{tikzpicture}
 	\end{figure}
 \end{frame}
