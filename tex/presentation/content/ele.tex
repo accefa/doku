@@ -18,8 +18,8 @@
 			\begin{exampleblock}{Funktionen}
 				\begin{itemize}
 					\item Einstellen des Azimuts
-					\item Einstellen der Elevation
 					\item Einstellen der Wurfdistanz
+					\item Nachführen der Wurfobjekte
 				\end{itemize}
 			\end{exampleblock}
 		\end{column}
@@ -99,9 +99,9 @@
 				\begin{itemize}
 					\item Motorentreiber für
 						\begin{itemize}
-							\item DC
-							\item BLDC
-							\item Stepper
+							\item Gleichstrommotor (DC)
+							\item Brushlessmotor (BLDC)
+							\item Schrittmotor (Stepper)
 						\end{itemize}
 					\item Dokumentationen
 				\end{itemize}
@@ -147,6 +147,36 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Motoren \hfill{} \footnotesize \group}
+	\framesubtitle{Schrittmotor (Stepper) für Turmausrichtung}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.9\textwidth]{../../fig/motor/stepper_01.jpg}
+				\caption{Schrittmotor QHS4218-51-10-049}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{Evaluationsergebnisse}
+				\begin{itemize}
+					\item Modelle fixiert
+					\item Energieversorgung unkritisch
+					\item Leistungsklasse anpassbar
+					\item an der HSLU verfügbar
+				\end{itemize}
+			\end{block}
+			\begin{exampleblock}{Treiberstufe}
+				\begin{itemize}
+					\item wird mit pren-et entwickelt
+					\item Fallback steht bereit
+				\end{itemize}
+			\end{exampleblock}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Motoren\hfill{}\footnotesize \group}
 	\framesubtitle{Synchronmotor (BLDC) für Ballwurf}
 	\begin{columns}
@@ -164,10 +194,52 @@
 			\end{figure}
 		\end{column}
 		\begin{column}{0.5\textwidth}
+			\begin{block}{Eckdaten und Funktion}
+				\begin{itemize}
+					\item Einstellen der Wurfdistanz
+					\begin{itemize}
+						\item Drehzahl
+						\item Leistung
+						\item Trägheit
+						\item Drehmoment
+					\end{itemize}
+				\end{itemize}
+			\end{block}
 		\end{column}
 	\end{columns}
-
 \end{frame}
+
+\begin{frame}
+	\frametitle{Motoren \hfill{} \footnotesize \group}
+	\framesubtitle{Synchronmotor (BLDC) für Ballwurf}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=1\textwidth]{../../fig/motor/bldc_02.png}
+				\caption{BLDC-Motor A10-12S von Hacker}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{Evaluationsergebnisse}
+				\begin{itemize}
+					\item Modelle nicht fixiert
+					\item Referenzmodell vorhanden
+					\item Energieversorgung kritisch
+					\item Leistungsklasse fixiert
+					\item an der HSLU nicht verfügbar
+				\end{itemize}
+			\end{block}
+			\begin{exampleblock}{Treiberstufe}
+				\begin{itemize}
+					\item wird mit pren-et entwickelt
+					\item Fallback definiert
+				\end{itemize}
+			\end{exampleblock}
+		\end{column}
+	\end{columns}
+\end{frame}
+
 
 \begin{frame}
 	\frametitle{Motoren\hfill{}\footnotesize \group}
@@ -203,8 +275,39 @@
 			\end{block}
 		\end{column}
 	\end{columns}
-
 \end{frame}
+
+\begin{frame}
+	\frametitle{Motoren \hfill{} \footnotesize \group}
+	\framesubtitle{Gleichstrommotor (DC) für Ballnachführung}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=1\textwidth]{../../fig/motor/dc_01.png}
+				\caption{Gleichstrommotor X-Drive 555-1 von Motraxx}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{Evaluationsergebnisse}
+				\begin{itemize}
+					\item Modelle nicht fixiert
+					\item Referenzmodelle vorhanden
+					\item Energieversorgung unkritisch
+					\item Leistungsklasse wählbar
+					\item ggf. and der HSLU verfügbar
+				\end{itemize}
+			\end{block}
+			\begin{exampleblock}{Treiberstufe}
+				\begin{itemize}
+					\item wird mit pren-et entwickelt
+					\item Fallback definiert
+				\end{itemize}
+			\end{exampleblock}
+		\end{column}
+	\end{columns}
+\end{frame}
+
 
 \subsubsection{Mikrocontroller}
 \begin{frame}
@@ -227,8 +330,9 @@
 						\item Busse (UART, SPI, I$^2$C)
 					\end{itemize}
 				\item Programmierung in C
-				\item Kommunikation über UART
+				\item Kommunikation mit UART (USB $\leftrightarrow$ Seriell)
 				\item Programmierung mit CW, KDS oder GCC möglich
+				\item wird eingesetzt an der HSLU
 			\end{itemize}
 		\end{column}
 	\end{columns}
