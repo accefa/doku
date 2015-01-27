@@ -47,6 +47,34 @@
 	\end{columns}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Projektmanagement \hfill{} \footnotesize \group}
+	\framesubtitle{Regelkreis für Arbeitspakete}
+	\begin{figure}
+		\begin{tikzpicture}[node distance=2.85cm, scale=0.75, transform shape]
+			\footnotesize
+			\node (m) [flowchart-block] {define Milestone};
+			\node (i) [flowchart-block, right of=m] {define Issue};
+			\node (a) [flowchart-block, right of=i] {(re)assign Member};
+			\node (ov) [flowchart-decision, below right of=a] {Assignee overload?};
+			\node (si) [flowchart-block, right of=ov] {solve Issue};
+			\node (is) [flowchart-decision, below of=si] {Issue solved?};
+			\node (ci) [flowchart-block, right of=is] {close Issue};
+			\node (np) [flowchart-decision, below of=i] {new problem?};
+			\draw[blue, thick, ->] (m) -- (i);
+			\draw[blue, thick, ->] (i) -- (a);
+			\draw[blue, thick, ->] (a) -| (ov);
+			\draw[blue, thick, ->] (ov) -| node[anchor=south, very near start] {Y} (a);
+			\draw[blue, thick, ->] (ov) -- node[anchor=south, very near start] {N} (si);
+			\draw[blue, thick, ->] (si) -- (is);
+			\draw[blue, thick, ->] (is) -- node[anchor=south, very near start] {Y} (ci);
+			\draw[blue, thick, ->] (is) -| node[anchor=south, very near start] {N} (np);
+			\draw[blue, thick, ->] (np) -| node[anchor=south, very near start] {N} (a);
+			\draw[blue, thick, ->] (np) -- node[anchor=west, very near start] {Y} (i);
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
 \subsection{Projektverlauf}
 \begin{frame}
 	\frametitle{Projektverlauf\hfill{}\footnotesize \group}
